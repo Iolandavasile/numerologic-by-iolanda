@@ -1,0 +1,11 @@
+Numerologic_by_Iolanda/
+│
+├── index.html
+├── package.json
+├── README.md
+├── /src
+│   ├── App.jsx
+│   ├── index.js
+│   └── /components
+│       └── NumerologyApp.jsx
+└── guide_github_private.md
