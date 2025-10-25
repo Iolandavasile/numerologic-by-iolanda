@@ -1,4 +1,4 @@
-// Numerologic by Iolanda – Versiune Demo simplă
+// Numerologic by Iolanda – Versiune demo simplă
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.createElement("div");
   root.innerHTML = `
@@ -10,3 +10,5 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
   document.body.appendChild(root);
 });
+
+
