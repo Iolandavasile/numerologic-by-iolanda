@@ -1,12 +1,12 @@
-// Numerologic by Iolanda – versiune simplificată (React-free demo)
-
+// Numerologic by Iolanda – Versiune Demo simplă
 document.addEventListener("DOMContentLoaded", () => {
-  const app = document.getElementById("root");
-  app.innerHTML = `
-    <div style="text-align:center; font-family: Arial; padding: 40px;">
+  const root = document.createElement("div");
+  root.innerHTML = `
+    <div style="text-align:center; font-family:Arial; margin-top:80px;">
       <h1>🔢 Numerologic by Iolanda</h1>
-      <p>Versiune demo – aplicația se încarcă corect!</p>
-      <p style="color: #666;">(Următorul pas: activarea modulului React complet 💫)</p>
+      <p style="font-size:18px;">Versiune demo – aplicația se încarcă corect!</p>
+      <p style="color:gray;">Următorul pas: integrarea completă React 💫</p>
     </div>
   `;
+  document.body.appendChild(root);
 });
