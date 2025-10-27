@@ -1,4 +1,4 @@
-const ro = {
+export default {
   // Titluri generale UI
   title: "Interpretări Numerologice",
   subtitle: "Calculează-ți vibrațiile, umple matricele și deschide interpretările exacte din curs.",
@@ -2711,4 +2711,4 @@ vrea in Spania , tu nu vrei.
 implica acestea. Copii dintr-o alta casnicie, insasi ideea de a avea un copil : Ea 
 vrea, tu nu. */`,
 };
-export default sectionsRo;
+
