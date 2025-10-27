@@ -1,5 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { Document, Packer, Paragraph, HeadingLevel, TextRun } from "docx";
+import sectionsData from "../data/sections.ro.js";
+
 
 /**
  * ✨ Numerologic by Iolanda
