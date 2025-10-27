@@ -124,17 +124,9 @@ const personalMonth = (py, keepMaster) => reduceNumber(py + currentMonth, keepMa
 //    Matrița + Interpretările   //
 // ============================= //
 
-const sections = [
-  { title: "Vibrația interioară", text: "Interpretarea completă va fi adăugată aici." },
-  { title: "Vibrația exterioară", text: "..." },
-  { title: "Vibrația destinului", text: "..." },
-  { title: "Vibrația căii destinului", text: "..." },
-  { title: "Vibrația globală", text: "..." },
-  { title: "Vibrația cosmică", text: "..." },
-  { title: "Gradul de evoluție", text: "..." },
-  { title: "Sexualitatea omului", text: "..." },
-  { title: "A doua natură a omului", text: "..." },
-];
+import sectionsData from "../data/sections.ro.js";
+const sections = sectionsData;
+
 
 // ============================= //
 //            APP UI             //
