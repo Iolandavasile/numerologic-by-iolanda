@@ -1,4 +1,4 @@
-const sectionsFR = {
+export default {
   // Chei identice; poți completa treptat.
 };
-export default sectionsFR;
+
