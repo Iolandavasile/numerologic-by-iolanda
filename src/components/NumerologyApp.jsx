@@ -33,7 +33,7 @@ const UI = {
     meanings: "Semnificații",
   },
   fr: {
-    appTitle: "✨ Numerologic by Iolanda",
+    appTitle: "✨ Numérologie par Iolanda",
     name: "Nom complet",
     birthdate: "Date de naissance",
     keepMaster: "Conserver les nombres maîtres 11/22/33",
@@ -114,78 +114,25 @@ const now = new Date();
 const currentYear = now.getFullYear();
 const currentMonth = now.getMonth() + 1;
 
-const personalYear = (d, m, keepMaster) => reduceNumber(sumDigits(d) + sumDigits(m) + sumDigits(currentYear), keepMaster);
+const personalYear = (d, m, keepMaster) =>
+  reduceNumber(sumDigits(d) + sumDigits(m) + sumDigits(currentYear), keepMaster);
 const personalMonth = (py, keepMaster) => reduceNumber(py + currentMonth, keepMaster);
 
 // ============================= //
-//         Interpretări          //
+//    Matrița + Interpretările   //
 // ============================= //
 
-const meaningsRO = {
-  1: "Inițiator, curajos, lider. Lecția: încredere și direcție.",
-  2: "Diplomat, empatic, cooperant. Lecția: echilibru emoțional.",
-  3: "Creativ, expresiv, jucăuș. Lecția: finalizează proiectele.",
-  4: "Structurat, muncitor, disciplinat. Lecția: deschidere spre nou.",
-  5: "Liber, adaptabil, călător. Lecția: stabilitate interioară.",
-  6: "Familist, estetic, grijuliu. Lecția: echilibru între tine și ceilalți.",
-  7: "Cercetător, spiritual, analitic. Lecția: deschidere și încredere.",
-  8: "Ambițios, lider, manager. Lecția: etică și echilibru.",
-  9: "Umanitar, artistic, vizionar. Lecția: detașare și iertare.",
-  11: "Maestru inspirat. Lecția: încredere în intuiție.",
-  22: "Arhitect vizionar. Lecția: manifestare conștientă.",
-  33: "Vindecător prin iubire. Lecția: granițe sănătoase.",
-};
-
-const meaningsFR = {
-  1: "Initiateur, courageux, leader. Leçon : confiance et direction.",
-  2: "Diplomate, empathique, coopératif. Leçon : équilibre émotionnel.",
-  3: "Créatif, expressif, joueur. Leçon : terminer ce qui est commencé.",
-  4: "Structuré, travailleur, discipliné. Leçon : ouverture d'esprit.",
-  5: "Libre, adaptable, voyageur. Leçon : stabilité intérieure.",
-  6: "Familial, esthétique, attentionné. Leçon : équilibre personnel.",
-  7: "Chercheur, spirituel, analytique. Leçon : confiance et ouverture.",
-  8: "Ambitieux, dirigeant, gestionnaire. Leçon : éthique et équilibre.",
-  9: "Humanitaire, artistique, visionnaire. Leçon : détachement et pardon.",
-  11: "Maître inspiré. Leçon : faire confiance à l’intuition.",
-  22: "Architecte visionnaire. Leçon : manifestation consciente.",
-  33: "Guérisseur par l’amour. Leçon : limites saines.",
-};
-
-// ============================= //
-//         Raport DOCX           //
-// ============================= //
-
-async function exportDocx({ name, date, results, lang }) {
-  const t = UI[lang];
-  const m = lang === "ro" ? meaningsRO : meaningsFR;
-
-  const doc = new Document({
-    sections: [
-      {
-        children: [
-          new Paragraph({ text: t.appTitle, heading: HeadingLevel.TITLE }),
-          new Paragraph(`Nume / Nom: ${name}`),
-          new Paragraph(`Data / Date: ${date}`),
-          new Paragraph(""),
-          new Paragraph(`${t.lifePath}: ${results.lifePath} – ${m[results.lifePath] || ""}`),
-          new Paragraph(`${t.expression}: ${results.expression} – ${m[results.expression] || ""}`),
-          new Paragraph(`${t.heart}: ${results.heart}`),
-          new Paragraph(`${t.personality}: ${results.personality}`),
-          new Paragraph(`${t.personalYear}: ${results.py}`),
-          new Paragraph(`${t.personalMonth}: ${results.pm}`),
-        ],
-      },
-    ],
-  });
-
-  const blob = await Packer.toBlob(doc);
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `${t.appTitle.replace(/[^a-z0-9]/gi, "_")}_${name}.docx`;
-  a.click();
-  URL.revokeObjectURL(url);
-}
+const sections = [
+  { title: "Vibrația interioară", text: "Interpretarea completă va fi adăugată aici." },
+  { title: "Vibrația exterioară", text: "..." },
+  { title: "Vibrația destinului", text: "..." },
+  { title: "Vibrația căii destinului", text: "..." },
+  { title: "Vibrația globală", text: "..." },
+  { title: "Vibrația cosmică", text: "..." },
+  { title: "Gradul de evoluție", text: "..." },
+  { title: "Sexualitatea omului", text: "..." },
+  { title: "A doua natură a omului", text: "..." },
+];
 
 // ============================= //
 //            APP UI             //
@@ -199,6 +146,31 @@ export default function NumerologyApp() {
   const [date, setDate] = useState("");
   const [keepMaster, setKeepMaster] = useState(true);
   const [report, setReport] = useState("");
+
+  const [birthDate, setBirthDate] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [matrixBase, setMatrixBase] = useState(Array(9).fill(""));
+  const [matrixName, setMatrixName] = useState(Array(9).fill(""));
+  const [activeSection, setActiveSection] = useState(null);
+
+  function toggleSection(i) {
+    setActiveSection(activeSection === i ? null : i);
+  }
+
+  function calculateMatrix() {
+    const newBase = Array(9)
+      .fill("")
+      .map((_, i) =>
+        Math.random() > 0.5 ? `${i + 1}`.repeat(Math.ceil(Math.random() * 3)) : ""
+      );
+    const newName = Array(9)
+      .fill("")
+      .map((_, i) =>
+        Math.random() > 0.5 ? `${i + 1}`.repeat(Math.ceil(Math.random() * 4)) : ""
+      );
+    setMatrixBase(newBase);
+    setMatrixName(newName);
+  }
 
   const results = useMemo(() => {
     const digits = parseDateDigits(date);
@@ -217,114 +189,92 @@ export default function NumerologyApp() {
     return { lifePath, expression, heart, personality, py, pm };
   }, [name, date, keepMaster]);
 
-  const generate = () => {
-    const m = lang === "ro" ? meaningsRO : meaningsFR;
-    const txt = [
-      `${t.appTitle}`,
-      `Nume: ${name} | Data: ${date}`,
-      "",
-      `${t.lifePath}: ${results.lifePath} – ${m[results.lifePath] || ""}`,
-      `${t.expression}: ${results.expression} – ${m[results.expression] || ""}`,
-      `${t.heart}: ${results.heart}`,
-      `${t.personality}: ${results.personality}`,
-      `${t.personalYear}: ${results.py}`,
-      `${t.personalMonth}: ${results.pm}`,
-    ].join("\n");
-    setReport(txt);
-    navigator.clipboard?.writeText(txt);
-  };
-
   return (
-    <div className="min-h-screen w-full bg-gray-50 text-gray-900 p-6 flex flex-col items-center">
-      <div className="w-full max-w-3xl bg-white rounded-2xl shadow p-6 space-y-4">
+    <div className="min-h-screen w-full bg-black text-white p-6 flex flex-col items-center">
+      <div className="w-full max-w-4xl bg-neutral-900 rounded-2xl shadow-lg p-6 space-y-4">
+        {/* Header */}
         <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold">{t.appTitle}</h1>
+          <h1 className="text-2xl font-bold text-yellow-400">{t.appTitle}</h1>
           <select
             value={lang}
             onChange={(e) => setLang(e.target.value)}
-            className="border rounded-lg px-2 py-1"
+            className="border border-gray-600 bg-neutral-800 rounded-lg px-2 py-1 text-white"
           >
             <option value="ro">Română</option>
             <option value="fr">Français</option>
           </select>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4">
-          <div>
-            <label className="text-sm font-semibold">{t.name}</label>
-            <input
-              className="mt-1 w-full border rounded-xl px-3 py-2"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-          <div>
-            <label className="text-sm font-semibold">{t.birthdate}</label>
-            <input
-              className="mt-1 w-full border rounded-xl px-3 py-2"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-            />
-          </div>
-        </div>
-
-        <div className="flex items-center gap-2">
+        {/* Form */}
+        <div className="flex flex-wrap gap-4 justify-center mt-4">
           <input
-            id="master"
-            type="checkbox"
-            checked={keepMaster}
-            onChange={(e) => setKeepMaster(e.target.checked)}
+            type="date"
+            value={birthDate}
+            onChange={(e) => setBirthDate(e.target.value)}
+            className="bg-neutral-800 text-white px-3 py-2 rounded-lg border border-gray-600"
           />
-          <label htmlFor="master">{t.keepMaster}</label>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-center">
-          <div className="rounded-xl bg-indigo-50 p-3">
-            <div className="text-xs uppercase text-indigo-700">{t.lifePath}</div>
-            <div className="text-2xl font-extrabold">{results.lifePath || "-"}</div>
-          </div>
-          <div className="rounded-xl bg-amber-50 p-3">
-            <div className="text-xs uppercase text-amber-700">{t.expression}</div>
-            <div className="text-2xl font-extrabold">{results.expression || "-"}</div>
-          </div>
-          <div className="rounded-xl bg-emerald-50 p-3">
-            <div className="text-xs uppercase text-emerald-700">{t.heart}</div>
-            <div className="text-2xl font-extrabold">{results.heart || "-"}</div>
-          </div>
-          <div className="rounded-xl bg-rose-50 p-3">
-            <div className="text-xs uppercase text-rose-700">{t.personality}</div>
-            <div className="text-2xl font-extrabold">{results.personality || "-"}</div>
-          </div>
-          <div className="rounded-xl bg-sky-50 p-3">
-            <div className="text-xs uppercase text-sky-700">{t.personalYear}</div>
-            <div className="text-2xl font-extrabold">{results.py || "-"}</div>
-          </div>
-          <div className="rounded-xl bg-purple-50 p-3">
-            <div className="text-xs uppercase text-purple-700">{t.personalMonth}</div>
-            <div className="text-2xl font-extrabold">{results.pm || "-"}</div>
-          </div>
-        </div>
-
-        <div className="flex gap-3 flex-wrap">
+          <input
+            type="text"
+            placeholder="Nume complet"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            className="bg-neutral-800 text-white px-3 py-2 rounded-lg border border-gray-600"
+          />
           <button
-            className="px-4 py-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-700"
-            onClick={generate}
+            onClick={calculateMatrix}
+            className="bg-yellow-500 text-black font-semibold px-4 py-2 rounded-lg hover:bg-yellow-400"
           >
-            {t.generate}
-          </button>
-          <button
-            className="px-4 py-2 rounded-xl border"
-            onClick={() => exportDocx({ name, date, results, lang })}
-          >
-            {t.export}
+            Calculează
           </button>
         </div>
 
-        <textarea
-          className="w-full min-h-[200px] border rounded-xl p-3 font-mono text-sm"
-          value={report}
-          onChange={(e) => setReport(e.target.value)}
-        />
+        {/* Matricele */}
+        <div className="flex flex-col md:flex-row justify-center gap-8 mt-8">
+          <div>
+            <h3 className="font-semibold text-center mb-2 text-yellow-300">Matriță de bază</h3>
+            <div className="grid grid-cols-3 gap-2">
+              {matrixBase.map((v, i) => (
+                <div
+                  key={i}
+                  className="border border-gray-700 p-4 rounded-md text-center text-lg font-bold bg-neutral-800"
+                >
+                  {v || ""}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-center mb-2 text-yellow-300">Matriță a numelui</h3>
+            <div className="grid grid-cols-3 gap-2">
+              {matrixName.map((v, i) => (
+                <div
+                  key={i}
+                  className="border border-gray-700 p-4 rounded-md text-center text-lg font-bold bg-neutral-800"
+                >
+                  {v || ""}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Interpretările */}
+        <div className="mt-10 space-y-4">
+          {sections.map((sec, i) => (
+            <div key={i} className="border border-gray-700 rounded-lg">
+              <button
+                className="w-full text-left px-4 py-3 bg-neutral-800 hover:bg-neutral-700 font-semibold text-yellow-300"
+                onClick={() => toggleSection(i)}
+              >
+                {sec.title}
+              </button>
+              {activeSection === i && (
+                <div className="px-4 py-3 bg-neutral-900 text-gray-100">{sec.text}</div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
