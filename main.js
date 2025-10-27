@@ -12,6 +12,18 @@ document.getElementById("lang").addEventListener("change", e => {
 
 document.getElementById("calcBtn").addEventListener("click", calculate);
 
+function renderPersonalCode(op1, op2, op3, op4) {
+  // ia data din input și păstrează doar cifrele (ex: "11-12-1981" -> "11121981")
+  const birthRaw = document.getElementById('birthdate').value.replace(/\D/g, '');
+  // lipește: data + cele 4 numere operative
+  const personalCode = `${birthRaw}${op1}${op2}${op3}${op4}`;
+  const box = document.getElementById('personal-code');
+  box.textContent = `Cod personal: ${personalCode}`;
+}
+
+// …în funcția ta de calcul, DUPĂ ce ai calculat op1/op2/op3/op4:
+renderPersonalCode(op1, op2, op3, op4);
+
 function calculate() {
   const dob = document.getElementById("dob").value;
   const name = document.getElementById("fullname").value.trim();
