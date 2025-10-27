@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html lang="ro">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Numerologic by Iolanda</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✨ Numerologic by Iolanda</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>✨ Numerologic by Iolanda</h1>
+      <div class="controls">
+        <label>RO / FR:</label>
+        <select id="lang">
+          <option value="ro">Română</option>
+          <option value="fr">Français</option>
+        </select>
+      </div>
+    </header>
 
-    <!-- Font modern + stil rapid de bază -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <section class="inputs">
+      <label>Data nașterii:</label>
+      <input type="date" id="dob">
+      <label>Nume complet:</label>
+      <input type="text" id="fullname" placeholder="Nume Prenume">
+      <button id="calcBtn">Calculează</button>
+    </section>
 
-    <!-- Stil general minimal pentru fundal -->
-    <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        background-color: #000;
-        color: #fff;
-        font-family: "Montserrat", sans-serif;
-      }
-      #root {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        width: 100%;
-      }
-      .loading-text {
-        text-align: center;
-        font-size: 1.2rem;
-        opacity: 0.8;
-        animation: pulse 1.5s infinite;
-      }
-      @keyframes pulse {
-        0% { opacity: 0.6; }
-        50% { opacity: 1; }
-        100% { opacity: 0.6; }
-      }
-    </style>
-  </head>
+    <section id="results" class="hidden">
+      <h2>Cod personal și vibrații</h2>
+      <div id="codes" class="codes"></div>
 
-  <body>
-    <!-- Aici React va încărca aplicația -->
-    <div id="root">
-      <div class="loading-text">🔮 Se încarcă aplicația Numerologic by Iolanda...</div>
-    </div>
+      <h2>Matrițele</h2>
+      <div class="matrices">
+        <div class="matrix">
+          <h3>Matrița de bază (data)</h3>
+          <div id="matrixDate" class="grid"></div>
+        </div>
+        <div class="matrix">
+          <h3>Matrița numelui</h3>
+          <div id="matrixName" class="grid"></div>
+        </div>
+      </div>
 
-    <!-- Leagă aplicația React -->
-    <script type="module" src="./main.js"></script>
-  </body>
+      <h2>Numere din nume</h2>
+      <div id="nameNumbers" class="codes"></div>
+
+      <h2>Interpretări</h2>
+      <div id="sections"></div>
+    </section>
+  </div>
+
+  <script src="sections.ro.js"></script>
+  <script src="main.js"></script>
+</body>
 </html>
