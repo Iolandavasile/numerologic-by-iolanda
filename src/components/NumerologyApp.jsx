@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
-import sectionsRO from "../data/sections.ro.js";
-import sectionsFR from "../data/sections.fr.js";
+const sectionsData = window.sectionsRO;
+const sectionsData = window.sectionsFR;
+
 
 export default function NumerologyApp() {
   const [lang, setLang] = useState("ro");
