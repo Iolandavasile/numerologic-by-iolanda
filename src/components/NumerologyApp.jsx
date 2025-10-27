@@ -1,7 +1,6 @@
 import React, { useMemo, useState } from "react";
 import sectionsRO from "../data/sections.ro.js";
-let sectionsFR = {};
-try { sectionsFR = (await import("../data/sections.fr.js")).default || {}; } catch { /* ok */ }
+import sectionsFR from "../data/sections.fr.js";
 
 // ---------- Helpers ----------
 const onlyDigits = (s) => (s || "").replace(/[^0-9]/g, "");
@@ -201,20 +200,6 @@ export default function NumerologyApp() {
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
         />
-      </div>
-
-      <div style={{ textAlign: "center", marginBottom: "10px" }}>
-        <button onClick={() => { }} style={{
-          backgroundColor: "#FFD700",
-          border: "none",
-          padding: "8px 20px",
-          borderRadius: "6px",
-          cursor: "pointer",
-          color: "#000",
-          fontWeight: "bold"
-        }}>
-          Calculează
-        </button>
       </div>
 
       {/* ✅ Afișăm codul personal */}
