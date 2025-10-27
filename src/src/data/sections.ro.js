@@ -1,25 +1,7 @@
 export default {
-  // Titluri generale UI
-  title: "Interpretări Numerologice",
-  subtitle: "Calculează-ți vibrațiile, umple matricele și deschide interpretările exacte din curs.",
-  calc: "Calculează",
-  nameLabel: "Nume complet",
-  dobLabel: "Data nașterii",
-  kpi_code: "Cod personal (4 operații)",
-  kpi_vi: "Vibrația Interioară",
-  kpi_ve: "Vibrația Exterioară",
-  kpi_vc: "Vibrația Cosmică",
-  matricesTitle: "Matrițe",
-  mat_birth: "Matrița datei de naștere (147 / 258 / 369)",
-  mat_name: "Matrița numelui (147 / 258 / 369)",
-  legend147: "Rând 1: 1–4–7",
-  legend258: "Rând 2: 2–5–8",
-  legend369: "Rând 3: 3–6–9",
-  interpretationsTitle: "Interpretări",
-  // === SECȚIUNI CU TEXTE — LIPIȚI TEXTUL EXACT DIN CURS ===
-
-  // 1) Vibrații numerologice (interioară/exterioară/cosmică/destin/cale)
-  vib_interioara: `/* Vibrația 1 Plusuri 1
+ 
+"Vibratia interioara": ` 
+Plusuri 1
 • cel care tinde să pătrundă (în interior);
 • cel care explorează în interiorul necunoscutului, dar caută să nu se împartă. Caută continuu să scoată ceva în lumină (ca soarele) așa că nu suportă lucrurile ascunse, tăinuite, întunecate, acoperite;
 • 1 - original, independent, indivizibil, constructiv, intelectual, logic, îndrăzneț, individual, constructiv, competitiv, curajos, câștigător, puternic, creativ, activ, pionier, leader care deschide calea, drept, hotărât și dârz; pasional, se împlinește prin a GÂNDI PENTRU a da, a realiza - se împlinește prin realizările proprii! Inventiv, mental puternic, plin de idei, Influencer, expansiv; egocentric; centrat pe a ajunge la potențialul său maxim; model demn de urmat, lider autosuficient, dornic să fie primul în tot și toate; “vede” îngust și adânc; focus; se poate concentra puternic într-o acțiune, dar pierde imaginea de ansamblu.
@@ -292,8 +274,9 @@ Minusuri 33
 Lucruri Distructive 33
 – autosacrificiu până la autodistrugere;
 – idealism exagerat;
-– refuzul iubirii de sine. despre Vibrația Interioară, inclusiv regula pentru 10/11/12 (nivel 1 -> nivel 2) */`,
-  vib_exterioara: `/* Vibrația exterioară reprezintă **modul în care omul este perceput de ceilalți**, felul în care se manifestă în lume, imaginea exterioară și energia pe care o transmite.  
+– refuzul iubirii de sine. despre Vibrația Interioară, inclusiv regula pentru 10/11/12 (nivel 1 -> nivel 2) `,
+  //
+"Vibratia exterioara": ` Vibrația exterioară reprezintă **modul în care omul este perceput de ceilalți**, felul în care se manifestă în lume, imaginea exterioară și energia pe care o transmite.  
 Este legată de comportament, relaționare, reacție și atitudine.  
 
 - Dacă vibrația interioară arată cine ești cu adevărat,  
@@ -344,8 +327,9 @@ să înveți să-ți manifești potențialul interior în plan social, prin acț
 – Ești perceput ca o persoană caldă, empatică, vizionară.
 – Ai magnetism spiritual și atragi oameni care caută sens.
 – Ai grijă să nu te pierzi în emoțiile celorlalți. 
- */`,
-  vibratia_cosmica: `/*  Este rezultatul ultimelor doua cifre ale anului de nastere , reducandu-l la o singura cifra.
+ `,
+  //
+"Vibratia cosmica": ` Este rezultatul ultimelor doua cifre ale anului de nastere , reducandu-l la o singura cifra.
  Anul nasterii:
  Partea unu: mereu aceasi, fixa( primele doua cifre ale anului de nastere) legata de 
 subcontinent si emisfera cerebrala dreapta.
@@ -394,8 +378,9 @@ Să învețe încrederea în vocea divină interioară și să evite izolarea.
 8	Spiritul Maestrului Puterii – sufletul care învață echilibrul dintre materie și spirit, între control și abandon.	
 Să învețe să folosească puterea cu înțelepciune, pentru binele comun.
 9	Spiritul Iluminatului – sufletul care se află la ultima treaptă a experienței umane, dornic să se dăruiască lumii.	
-Să învețe să ierte, să elibereze și să iubească universal.*/`,
-  grad_evolutie: `/*  
+Să învețe să ierte, să elibereze și să iubească universal.`,
+  //
+"Gradul de evolutie": ` 
  Mod de calcul: (Vibratia interioara + Vibratia Exterioara + Vibratia Cosmica)
 De la 1 la 4 , putem vorbii despre copii Universului, care chiar daca vor face greseli in 
 aceasta viata, li se vor da multe sanse pentru a-si atinge destinul.
@@ -403,8 +388,10 @@ aceasta viata, li se vor da multe sanse pentru a-si atinge destinul.
 sa iti aplici vointa cat mai mult, si iti va fii mult mai usor!
  De la 6 la 9, vorbim despre “Initiatii Universului” , cei ce si-au ales un destin incercat!
  In aceasta viata ai rolul de invatator pentru celelalte spirite!
- Ex: 3 10 1967 : 3 + 1 + 4 = 8 */`,
-  vibratia_globala: `/* Modul de calcul:
+ Ex: 3 10 1967 : 3 + 1 + 4 = 8 `,
+  //
+"Vibratia globala": ` 
+Modul de calcul:
  Se obține adunând ziua + luna nașterii și reducând rezultatul la o cifră.-Dezvăluie comportamentul general și motivațiile omului, așa cum este el în integralitatea sa, 
 armonizând vibrația interioară (fără mască) cu cea socială (cu mască).-Oferă suportul necesar depășirii provocărilor și obstacolelor în viață.-Oferă informațiile despre motivațiile omului, despre ce îl stimulează să dea cel mai bun randament, 
 interesul lui real-Este un instrument util în dinamica între doi colegi, parteneri sau în grup.
@@ -423,9 +410,9 @@ Vibratia Globala ne arata Obiectivul omului in viata
 6.Acceptarea responsabilitatilor si crearea armoniei!
 7.Intelepciunea si cunoasterea de sine!
 8.Succesul material si manifestarea corecta a puterii!
-9.Exprimarea iubirii universale! Transformarea! */`,
-
-calea_destinului: `/*vibratia_caii_destinului: `
+9.Exprimarea iubirii universale! Transformarea! `,
+//
+"Calea destinului": `
 ✴️ **VIBRAȚIA CĂII DESTINULUI**
 
 CALEA DESTINULUI POVESTEȘTE DESPRE CE ȘI CUM ARE DE FACUT OMUL PRIN VIAȚĂ, CA SĂ IȘI REALIZEZE DESTINUL.  
@@ -612,8 +599,10 @@ Destin 12
 • Mai întâi trebuie să îndeplinească condițiile pentru a fi destin 3, iar mai apoi să îndeplinească destinul 12.
 • Viața dorește ca măcar primul nivel de destin să fie atins la un nivel cât mai înalt.
 • 12 – Cel ce a devenit un maestru învățător, maestru psiho-emoțional, cel ce răstoarnă paradigma lumii.
-• Poate conduce o mare masă de oameni. */`,
-Cea_doua_natura: `/* Cea de a doua natura a omului-Greseala majora;
+• Poate conduce o mare masă de oameni. `,
+  //
+"Cea de a doua natura a omului-Greseala majora": ` 
+Cea de a doua natura a omului-Greseala majora;
  Oamenii nascuti in ziua de 1 si 23!
  Si-a tradat fratele sau sora cu consecinte deosebit de grave pentru
  acestia. In aceasta viata, ar trebui sa asculte si sa implineasca practic orice dorinta a lor, dar fara 
@@ -756,9 +745,9 @@ tendinta sa ii spionezi pe oameni, insa nu repeta aceasta greseala majora!
 intampla ca in acest caz sa poti avea un copil. Daca totusi ai un coplil, 
 inchina-te pana la pamant in fata simtului acestuia pentru simtul lui de 
 maternitate sau paternitate. El totusi te-a ales chiar si asa. Invata sa 
-ingrijesti un copil strain*/`,
-
-sexualitatea_emotionala: `/* Sexualitatea de tip 1, oamenii nascuti intr-zi din: 1;10;19;28!
+ingrijesti un copil strain `,
+//
+"Sexualitatea emotionala": ` Sexualitatea de tip 1, oamenii nascuti intr-zi din: 1;10;19;28!
  Adora sa fie in centrul atentie, doresc sa conduca partida sexuala, au o personalitate luminoasa, 
 de tip solar. Au mare incredere dn ei insisi, sunt egocentrici, puternici, nu da atentie partenului, si ii
  place sa domine. Au dorinte arzatoare.
@@ -818,10 +807,10 @@ sfarsitul de drum. Este mai greu sa vezi sexualitatea unui 9 la prima vedere. Po
 faca sex dintr-o data , sau in locuri ciudate. Insa, dupa un anumit timp de comunicare 
 obligatoriu, vei intelege ca ai in fata ta un om carismatic si romantic. Acest lucru pentru oameni 
 este foarte sexi. Daca partenerul tau este 9 te asteapta o partida romantica, fiind foarte 
-important pentru el armonia si intelegerea reciproca! Daca vor lipsi acestea, 9 tinde catre pacea lui interioara */`,
+important pentru el armonia si intelegerea reciproca! Daca vor lipsi acestea, 9 tinde catre pacea lui interioara `,
 
   // 2) Codul personalizat + Matrița Psiho-Energo-Informațională
-  cod_personal: `/* Codul Personalizat al omului
+"Codul personalizat": ` Codul Personalizat al omului
  •Calculul cifrului numerologic.Calcularea corecta a codului numerologic este esentiala pentru 
 sanatatea analizei numerologice ulterioare!
  • Cititi toate cele 3 exemple de mai jos caci trateaza cele 3 situatii posibile. ATENTIE: se fac fix 
@@ -878,10 +867,10 @@ adunarea cifrelor din al treilea număr operațional.
  Nu se fac decat 4 operații!!! La Primul și la al treilea număr se interpretează fiecare 
 cifră in parte (nu numărul) La al doilea și al patrulea se interpreteaza numărul (nu 
 fiecare cifră in parte) Regulă valabilă in cazul in care aceste numere sun compuse din 
-două cifre. */`,
+două cifre. `,
 
-  // 3) Sferele de inteligență (1..9) — exact cum ai cerut (text neschimbat)
-  sfere_inteligenta: `/* 🩵 Sfera de Inteligență Psihică – 1
+  // 
+  "Sferele de inteligență":`  🩵 Sfera de Inteligență Psihică – 1
 
 Casuta 1 – Psihiicul, Inteligenta psihica, Caracterul și Voința Psihică.
 Cautare de solutii / Idei noi / Luarea deciziilor / Independenta /Caracterul
@@ -1256,16 +1245,16 @@ Libertinismul e foarte mare, iar omul e gata să moară decât să-și piardă l
 
 55 în matrice → arată că cresc mult șansele să aibă mai multe căsnicii, și fiecare va fi fragilă datorită dorinței mari de aventură (joc), bazată pe imaginea puternică de sine și dorința de libertate. */`,
 
-  // 4) Vectorii (147 / 258 / 369, 123 / 456 / 789, diagonale 159 / 357) — formulări din curs
-  vectori_principali: `/* 🩵 Vectorii principali
+  // 
+  "Vectorii": ` 🩵 Vectorii principali
 
 1 4 7 → SupraConștient – A fi, Fixație pe sine, Rațiune, Duh, Înțelepciune
 2 5 8 → Conștient – A face, Fixație pe alții, Suflet, Simțire, Emoții
 3 6 9 → Subconștient – A avea, Fixație pe obișnuințe, Minte, Cunoaștere, Personalitate
 
 Orice om are o fixație, are o idee a sa și merge pe ea.
-Aici se pot observa fixațiile omului și nivelul la care acesta se raportează: mental (sus), emoțional (mijloc) sau instinctual (jos). */`,
-  vectori_orizontali_verticali_diagonali: `/* Vectorul 147 – Bunăstare spirituală
+Aici se pot observa fixațiile omului și nivelul la care acesta se raportează: mental (sus), emoțional (mijloc) sau instinctual (jos). 
+Vectorul 147 – Bunăstare spirituală
 
 Orientarea către un scop de viață, dorința de a deveni ceva.
 
@@ -1340,8 +1329,9 @@ Vectorul 357 – Bunăstare în atingerea scopurilor
 Despre voința de a urca în ceea ce își propune.
 
 Reprezintă poftele carnale, dorințele și capacitatea de a menține motivația personală.
-📌 Vectorul pasiunii, dorinței de afirmare și al forței de manifestare. */`,
-  vectori_goi_exces: `/* Vectorii goi (lipsă de cifre într-o linie)
+📌 Vectorul pasiunii, dorinței de afirmare și al forței de manifestare. `,
+  //
+"Vectorii goi": ` (lipsă de cifre într-o linie)
 
 Vectorii goi reprezintă dezechilibrele majore din viața omului.
 Acolo unde nu există cifre pe o linie (orizontală, verticală sau diagonală), omul nu are flux energetic în acea zonă.
@@ -1409,8 +1399,9 @@ Lipsă de vocație clară.
 Lipsă de dorință, motivație, plăcere.
 
 Poate fi blocat sexual sau afectiv.
-👉 Lecție: să se redescopere prin contactul cu trupul, arta și bucuria de a trăi. */`,
-  flux_energetic_vectori: `/* Fluxul Energetic prin Vectori
+👉 Lecție: să se redescopere prin contactul cu trupul, arta și bucuria de a trăi. `,
+  //
+   "Fluxul Energetic prin Vectori" `
 
 (Cum curge energia prin matricea psiho-energo-informațională)
 
@@ -1511,8 +1502,9 @@ Diagonal: Arată destinul – unde duce combinația dintre gând, faptă și int
 👉 Concluzie generală:
 Când toate fluxurile (1→9) sunt active și armonioase, omul trăiește în unitate între corp, minte și spirit.
 Blocajele apar când energia se oprește într-o casetă (lipsă de cifră), sau când una dintre direcții este excesivă.
-Numerologul, cunoscând aceste fluxuri, poate diagnostica instant dezechilibrul energetic al unei persoane și poate indica zona de lucru spiritual sau karmic. */`,
-  vectori_elemente: `/* 🔹 Legătura dintre Vectori și Cele 4 Elemente Fundamentale
+Numerologul, cunoscând aceste fluxuri, poate diagnostica instant dezechilibrul energetic al unei persoane și poate indica zona de lucru spiritual sau karmic. `,
+  //
+" Legătura dintre Vectori și Cele 4 Elemente Fundamentale": `
 
 Cele 4 elemente sunt esențiale pentru înțelegerea dinamicii matricei psiho-energo-informaționale.
 Fiecare cifră și fiecare vector poartă vibrația unuia dintre aceste elemente.
@@ -1656,9 +1648,10 @@ Element în exces	Recomandări practice
 🔥 Foc	activități care răcoresc: apă, plimbări, relaxare, meditație, acceptarea vulnerabilității
 💧 Apă	ancorare în concret: sport, acțiuni practice, structurare, asumare de decizii ferme
 🌬️ Aer	reducerea agitației mentale: scris organizat, respirație conștientă, rutină zilnică stabilă
-🌍 Pământ	stimulare prin mișcare: dans, călătorii, creativitate, introspecție spirituală */`,
-    // 5) Numerologia numelui (toate subsecțiunile)
-  numele_intro: `/•Oare cuvintele pe care le rostim ,au o influenta asupra noastra la un nivel subtil? Un nivel vibrational?
+🌍 Pământ	stimulare prin mișcare: dans, călătorii, creativitate, introspecție spirituală `,
+    // 
+  "Numerologia numelui": ` 
+  Oare cuvintele pe care le rostim ,au o influenta asupra noastra la un nivel subtil? Un nivel vibrational?
  •Conteaza ce cuvinte folosim incat sa dam o mult mai mare importanta acestora?Ori totul este mort? 
 Adica nu este energie?
  •Raspunsul la aceste intrebari si multe altele care sunt generate de acestea este foarte simplu. DA
@@ -1722,8 +1715,9 @@ fi: este posibil sa fie situatii in care numele sa creeze in om o dorinta pe car
 fapt, sa nu o poata implini, poate, niciodata).
  Insa, Numele firmei si/sau al orasului / tarii este bine sa fie corespunzator unei casute 
 lipsa. Doar acestea vor veni sa “compenseze” casuta si vectorul afectat
- CIFRELE IN EXCES sau CASUTELE GOALE au semnificatii specifice .Deasemenea si numarul locuintei, masinii influenteaza matrita de baza (a datei de nastere a omului) */`,
-  numar_exprimare: `/* Numele pe care îl purtaţi acţionează în mod simbolic asupra persoanelor care nu vă cunosc. El ne creează o anumită imagine a felului în care arătam, în care ne comportam şi a modului în care ne vom dezvolta, iar această imagine este creată prin simpla îmbinare a sunetului şi formei literelor pe care numele le conţine.
+ CIFRELE IN EXCES sau CASUTELE GOALE au semnificatii specifice .Deasemenea si numarul locuintei, masinii influenteaza matrita de baza (a datei de nastere a omului) `,
+  //
+  "Numar exprimare": ` Numele pe care îl purtaţi acţionează în mod simbolic asupra persoanelor care nu vă cunosc. El ne creează o anumită imagine a felului în care arătam, în care ne comportam şi a modului în care ne vom dezvolta, iar această imagine este creată prin simpla îmbinare a sunetului şi formei literelor pe care numele le conţine.
 Este suma cifrelor corespunzătoare tuturor literelor din toate prenumele și numele de familie.
 Reprezintă personalitatea omului, cheia catre ce poate el deveni, nivelele care pot fi atinse de acesta.
    Filipescu Ioana Maria:
@@ -1799,8 +1793,9 @@ compasiune, ofera altruism si asculta de parerile celor din jurul sau. Are tendi
 ce au nevoie , si chiar sa se implice in ajutorarea animalelor.
  Capacitati mentale deosebite, talent in stiinte si arte . Poate ajunge sa aiba discipoli , si sa transforme 
 lumea din jurul sau.Iubeste natura , au nevoi de a-si exteoriza creativitatea si unicitatea.
- Pot ajunge aroganti, sa se creada superiori fata de ceilalti, infumurati , nerecunoscand meritele celor din jur */`,
-  cifre_exces_nume: `/* Cifrele in Exces!
+ Pot ajunge aroganti, sa se creada superiori fata de ceilalti, infumurati , nerecunoscand meritele celor din jur `,
+  //
+"Cifre exces nume": ` Cifrele in Exces!
  CIFRELE IN EXCES au semnificatii specifice: ( daca in matrita numelui cifra depaseste cu 2 sau 3 
 unitati aceiasi casuta a matritei de baza, a datei de nastere, atunci omul, posesorul acelui nume, in 
 interiorul sau isi va dori sa fie mai…… decat ii este lui dat, adica decat “poate” in datele native)
@@ -1837,8 +1832,9 @@ căsătorie , frica de sărăcie, frica de gestionare a relațiilor și a bunuri
  8 lipsă: Capacitatea de a menține echilbrul între bani și familie, care se răsfrânge asupra fricii de a 
 divorța, de a nu putea să iubească , de a nu putea fi iubit , frica de a nu ajunge la o putere.
  9 lipsă: Interes față de cei din jur care se răsfrânge asupra fricii de a nu se putea dedica, de a nu 
-putea fi devotat celor din jur, a nu fi iubitor si cumpatat. */`,
-  numar_intim: `/* Numarul Intim
+putea fi devotat celor din jur, a nu fi iubitor si cumpatat. `,
+  //
+"Numar intim": ` Numarul Intim
  •NUMĂRUL INTIM = (asociat cu CIFRA de vibrație INTERIOARĂ) = Suma tuturor 
 vocalelor din numele complet = cifra INIMII, esența ascunsă în spatele imaginii 
 exterioare, interesele adânci, dorințele, simpatiile, antipatiile, caracterul.
@@ -1848,8 +1844,8 @@ modificarea, menținerea sau amplificarea eului ascuns.
  •Paraschiv = 7 1 9 1 1 3 8 9 4 = 1 + 1 + 9 = 11 ; 1+ 1 = 2
  •Ioana = 9 6 1 5 1 = 9+6+1+1 = 17 ; 1+7 = 8
  •Carmen = 3 1 9 4 5 5 = 1+5 = 6
- •Numarul Intim = 2 + 8 + 6 = 16 = 1+6 = 7 */`,
-  numar_realizare: `/* •NUMĂRUL DE REALIZARE = (asociat cu CIFRA de vibrație EXTERIOARĂ) = Suma 
+ •Numarul Intim = 2 + 8 + 6 = 16 = 1+6 = 7 `,
+"Numar realizare": ` •NUMĂRUL DE REALIZARE = (asociat cu CIFRA de vibrație EXTERIOARĂ) = Suma 
 consoanelor = imaginea exterioară, impresia pe care o lăsăm asupra celorlalți, 
 manierele, comportamentul.
  •Acesta amplifică sau frânează realizările concrete, cu extindere asupra vieții sociale și 
@@ -1858,21 +1854,24 @@ profesionale, eul exterior.
  •Paraschiv = 7 1 9 1 1 3 8 9 4 = 7+9+1+3+8+4 = 32; 3+2 = 5
  •Ioana = 9 6 1 5 1 = 5
  •Carmen = 3 1 9 4 5 5 =3+9+4+5=21; 2+1 = 3
- •Numarul de realizare = 5+5+3 = 13;  1+3 = 4 */`,
-  numar_activ: `/* Numar Activ
+ •Numarul de realizare = 5+5+3 = 13;  1+3 = 4 `,
+  //
+"Numar Activ": `
  •NUMĂRUL ACTIV = suma tuturor cifrelor corespunzătoare literelor din 
 Prenumele cel mai des folosit sau porecla - au o influență activă asupra 
 comportamentului.
  •Exemplu : Paraschiv Ioana Carmen, dar lumea ii spune Carmeluta :
  •Carmeluta = 3+1+9+4+5+3+3+2+1 = 31; 3+1 = 4
- •Numar Activ = 4 */`,
-  numar_ereditar: `/* Numar Ereditar
+ •Numar Activ = 4 `,
+  //
+"Numar ereditar": ` Numar Ereditar
  •NUMĂRUL EREDITAR = suma tuturor cifrelor corespunzatoare literelor din 
 Numele de familie; are o influență pasivă, o picatura mai mică decât cea a 
 prenumelui .
  •Exemplu: Paraschiv Ioana Carmen
- •Paraschiv = 7+1+9+1+1+3+8+9+4 = 43 ; 4+3 = 7 */`,
-  numar_ereditar_karmic: `/*  •NUMARUL EREDITAR KARMIC = suma tuturor cifrelor corespunzatoare literelor 
+ •Paraschiv = 7+1+9+1+1+3+8+9+4 = 43 ; 4+3 = 7 `,
+  //
+"NUMARUL EREDITAR KARMIC": `  = suma tuturor cifrelor corespunzatoare literelor 
 din Numele de familie, aduse la o singura cifra!
  •De exemplu: Paraschiv Iona Carmen; necasatorita, deci cu numele de fata 
 (numele de neam)
@@ -1893,8 +1892,9 @@ importante pentru acel om .Dar daca au trecut 2 ani de la schimbarea Neamului, v
 neam in totalitate, deoarece chiar daca omul are dpdv genetic calitati,boli, experienta din neamul concret 
 din care vine, insa si Neamul nu il va mai ajuta in acele calitati mostenite.
  •Aprofundarea lor va ajuta la intelegerea mai usoara a comportamentelor, gusturilor si tendintelor unui 
-om pe care un numerolog il analizeaza. */`,
-  cifre_tensiune: `/* Cifrele de Tensiune
+om pe care un numerolog il analizeaza. `,
+  //
+ "Cifrele de Tensiune": `
  Adeseori, zona de conflict dintre oricare două numere poate fi găsită în tensiune, cifră utilă de ştiut, dar nu 
 foarte important, de aceea nu este nevoie să fie notată.(O Notam!)
  Pentru a calcula cifrele de tensiune, scădeţi un numar din celalalt. Acea cifră este utilizată în indicarea
@@ -1939,8 +1939,10 @@ pun la îndoială credinţa.
  8 - în cazul în care există  tensiuni, ele se datorează problemelor legate de carieră 
 sau de dobândirea sau păstrarea independenţei. Este foarte posibil ca acestor 
 indivizi să le lipsească aptitudinile organizatorice. întrucât au prea puţină încredere 
-în propriile forţe, nu le place să îşi exercite autoritatea, în nici o ocazie */`,
-  lectii_supl_karma: `/* Lectiile suplimentare ale Karmei!
+în propriile forţe, nu le place să îşi exercite autoritatea, în nici o ocazie `,
+
+  //
+ "Lectiile suplimentare ale Karmei!": `
  1 2 3 4 5 6 7 8 9
  A Ă Â B C D E F G
  H I Î J K L M N O
@@ -2005,8 +2007,9 @@ precautiei si a constientizarii propriilor limite si resurse.
 dezinteresului fata de cei apropiati, al egoismului, dar si sub semnul iubirii excesive de sine. 
 Foarte probabil ca ti-ai impus vointa asupra celorlalti, influentandu-le destinul. Lectia acestei 
 vieti face apel la toleranta, la capacitatea ta de compasiune, la sensibilitate, la abilitatea ta de a
- empatiza cu ceilalti. Trebuie sa inveti sa intinzi o mana de ajutor cand ti se cere si sa intelegi ca daruirea de sine nu este intotdeauna un sacrificiu. */`,
-  alegere_nume: `/*  •Folosind numerologia, puteti selecta cel mai potrivit nume pentru un copil,dar nu trebuie sa alegeti un 
+ empatiza cu ceilalti. Trebuie sa inveti sa intinzi o mana de ajutor cand ti se cere si sa intelegi ca daruirea de sine nu este intotdeauna un sacrificiu. `,
+//
+"Alegere nume": `  •Folosind numerologia, puteti selecta cel mai potrivit nume pentru un copil,dar nu trebuie sa alegeti un 
 nume doar pe baza numerelor pe care le contine. Este important ca numele respectiv sa va placa si sa 
 doriti sa îl dati copilului dumneavoastra, apoi sa tinem cont de valoarea sa numerica. Este necesar sa 
 cunoasteti data nasterii, cu alte cuvinte copilul trebuie sa fie deja nascut. Totusi, acest lucru nu trebuie sa 
@@ -2023,8 +2026,9 @@ mai fi aceeasi.
 trebuie sa comparati toate celelalte numere ale copilului si sa studiati structura numerogramei numelui. 
 Nimic nu va împiedica sa îi dati copilului dumneavoastra oricâte nume, pe certificatul de nastere; cel care 
 conteaza cu adevarat este cel folosit zilnic, pentru ca vibratiile sale au efectul cel mai mare.(chiar daca 
-recomandabil ar fi copilul sa aibe doar un Prenume ori = cu Numele ca numar de cifre , ori mai mare decat Prenumele) */`,
-  schimbare_nume: `/* Cum sa iti schimbi Numele
+recomandabil ar fi copilul sa aibe doar un Prenume ori = cu Numele ca numar de cifre , ori mai mare decat Prenumele) `,
+  //
+"Schimbare nume": ` Cum sa iti schimbi Numele
  •Putem considera drept schimbare a numelui chiar si o simpla modificare a modului în care îl 
 scriem sau doar o usoara rearanjare a literelor care îl compun; acest lucru este cu mult mai usor 
 de facut decât adoptarea unui nume cu totul diferit.
@@ -2037,8 +2041,9 @@ Unii oameni nu pot face fata acestei perioade si îsi reiau vechiul nume. Nu est
 rau în aceasta. Regulile care trebuie respectate în schimbarea unui nume sunt aceleasi ca în 
 cazul alegerii numelui unui copil: cifrele destinului si numelui complet trebuie sa fie identice sau 
 macar în armonie, cifra prenumelui trebuie sa nu fie aceeasi cu ziua nasterii, si este necesar sa 
-se ia în considerare toate numerele importante. */`,
-  litere_alfabet: `/* Literele din Alfabet
+se ia în considerare toate numerele importante. `,
+  //
+  "Literele din Alfabet": `
  •A – Litera cerebrala – autoritate, simtul conducerii, strigat de durere
  •B – Litera emotiva – sentimentalism, fire rezervata
  •C – Litera intuitiva – extrovertit
@@ -2064,16 +2069,15 @@ se ia în considerare toate numerele importante. */`,
  •W – Litera fizica – inconstanta, labilitate
  •X – Litera emotiva – tulburari nervoase si afective
  •Y – Litera intuitiva – incertitudine, intuitie
- •Z – Litera emotiva – indoiala, spirit materialist
- */`,
-  litere_grupe_intro: `/* Literele din Alfabet
+ •Z – Litera emotiva – indoiala, spirit materialist 
  Acea sectiune care contine majoritatea literelor din numele dumneavoastra va dezvaluie felul în care 
 va exteriorizati sau în care luati decizii de obicei. Daca aceasta parte a graficului dumneavoastra 
 contine mult mai multe litere decât oricare alta, latura temperamentului dumneavoastra care îi 
 corespunde va fi deosebit de puternica.
  Daca apar diferente nesemnificative între cele patru sectiuni, atunci numele si temperamentul 
-dumneavoastra vor fi bine echilibrate */`,
-  litere_emotionale: `/*  B –Litera emoțională–sentimentalism, fire rezervata
+dumneavoastra vor fi bine echilibrate `,
+  //
+"Litere emotionale": `  B –Litera emoțională–sentimentalism, fire rezervata
  I –Litera emoțională –tensiune, emotivitate
  O –Litera emoțională –emotii ascunse ,sentimentalism
  R –Litera emoțională –emotivitate, tensiune
@@ -2083,8 +2087,9 @@ dumneavoastra vor fi bine echilibrate */`,
  Z –Litera emoțională–indoiala, spirit materialist
  Litereleemotionaleindica faptulca întotdeaunase vatine seamade glasulinimiiside dorintele
  personale. Daca majoritatealiterelorse aflaînaceastagrupa, deciziilepe care purtatorulnumelui
- respectivle valuavorfi înmare parteinfluentatede ceeaceelsimtedin interior, de dorintelesale in conformitate cu viata. Acesti nativi sunt mari iubitori de arta. */`,
-  litere_intuitive: `/* C –Litera intuitiva -extrovertit
+ respectivle valuavorfi înmare parteinfluentatede ceeaceelsimtedin interior, de dorintelesale in conformitate cu viata. Acesti nativi sunt mari iubitori de arta. `,
+  //
+"Litera intuitiva -extrovertit": `
  F –Litera intuitiva –responsabilitate, adaptabilitate
  K –Litera intuitiva –inspiratie, nervozitate
  Q –Litera intuitiva –instabilitate, forta
@@ -2094,15 +2099,15 @@ dumneavoastra vor fi bine echilibrate */`,
  Literele intuitive arata ca întotdeauna cei în cauza se bazeaza pe instinct. Acestia sunt, într-o oarecare 
 masura, constienti de înzestrarile lor parapsihice. Cei care fac parte din aceasta categorie sunt mai mult 
 preocupati de cunoasterea spiritului. Adeseori aceste persoane viseaza cu ochii deschisi si felul în care abordeaza viata pare complet lipsit de simt practic. */`,
-  litere_fizice: `/*  D –Litera fizica –eficacitate, capacitate de dezvoltare
+"Litere fizice": `  D –Litera fizica –eficacitate, capacitate de dezvoltare
  E –Litera Litera fizica –activitate, mobilitate
  M –Litera Litera fizica –activitate, constructivitate
  W –Litera fizica –inconstanta, labilitate
  Literele fizice indica nevoia de aactiona, mai degraba decât de a sta sa mediteze. Atunci când 
 majoritatea literelor unui nume se înscriu în aceasta categorie, acest lucru indica o natura energica, o 
 persoana careia îi place sa fie mereu ocupata si care pune pe planul al doilea sentimentele si intuitia, 
-preferând sa treaca la fapte,  fiind atras de munca */`,
-  litere_cerebrale: `/* A –Litera cerebrala –autoritate, simtul conducerii, strigat de durere
+preferând sa treaca la fapte,  fiind atras de munca `,
+"Litere cerebrale": ` A –Litera cerebrala –autoritate, simtul conducerii, strigat de durere
  G –Litera cerebrala –izolare, fire inchisa
  H –Litera cerebrala –ambitie, nerespectarea legilor
  J –Litera cerebrala –inteligenta, creativitate
@@ -2110,8 +2115,9 @@ preferând sa treaca la fapte,  fiind atras de munca */`,
  N –Litera cerebrala –energie, miscare
  P –Litera cerebrala –discretie, singuratate
  Literele cerebrale indica o fire calculata, care ia hotararile ce o privesc cu calm si stapanire de sine, fara sa 
-se pripeasca, nelasandu-se influentata de instinct sau de sentimente. Intotdeauna va veti face planuri minutioase înainte de a trece efectiv la fapte. Este un foarte bun observator. */`,
-  initiale_prenume: `/* A(l) - O litera cerebrală
+se pripeasca, nelasandu-se influentata de instinct sau de sentimente. Intotdeauna va veti face planuri minutioase înainte de a trece efectiv la fapte. Este un foarte bun observator. `,
+  //
+"Initiale prenume": ` A(l) - O litera cerebrală
  Litera A este o litera a hotarârii si agresivitatii si isi impune opiniile în fata lumii întregi. Acest
  lucru este evident si în forma sa, înaltata pe verticala. „A" deschide calea conducatorului cu 
 idei originale si planuri ambitioase si se caracterizeaza printr-o mare încredere în propriile
@@ -2291,8 +2297,9 @@ intuitie foarte puternica, de care se pot folosi cu succes.
 recunoastere în vietile nativilor sai. Fiinte puternice, mari amatori de lux, acesti indivizi sunt adeseori 
 interesati de metafizica si de stiintele oculte. O viata de familie confortabila este deosebit de importanta 
 pentru ei. Z, o litera neconventionala, este favorabila activitatilor financiare.
- In poziţie iniţialâ - favorizeaza puterea. */`,
-  litere_initiatoare: `/* Putem împarti literele în trei grupe - respectiv Initiatoare, Continuatoare si Finalizatoare, 
+ In poziţie iniţialâ - favorizeaza puterea. `,
+  //
+"Litere initiatoare": ` Putem împarti literele în trei grupe - respectiv Initiatoare, Continuatoare si Finalizatoare, 
 iar aceasta categorizare ne furnizeaza informatii suplimentare.
  Initiatoare: A E I K O R Z
  Aceste litere favorizeaza capacitatea de a crea si a demara cu succes proiecte. Nativii acestor litere nu 
@@ -2303,8 +2310,9 @@ au fost deja puse în practica. Nativii ale caror litere se încadreaza în acea
  aduce îmbunatatiri acelor lucruri deja create, dar pot fi nehotarâti uneori.
  Finalizatoare: C D G L M V
  Aceste litere sunt favorabile ducerii la bun sfârsit a proiectelor începute. Nativii lor sunt orientati spre 
-progres si, de obicei, finalizeaza cu succes ceea ce au început. */`,
-  influenta_vocalelor: `/* Influenta vocalelor
+progres si, de obicei, finalizeaza cu succes ceea ce au început. `,
+  //
+"Influenta vocalelor": `
  Daca numele contine un numar par de vocale, imperfectiunile fizice tind sa se 
 manifeste pe partea stanga a corpului, in timp ce un numar impar de vocale 
 conduce la imperfectiuni pe partea dreapta.
@@ -2318,9 +2326,9 @@ avem in fata surprizelor, a schimbarilor neasteptate.
 emotiile.
  •U - raspunde cu pasiune, poate un pic teatral, si adesea diferit de cum te-ai astepta.
  • Cand prima litera a prenumelui se intampla sa fie chiar o vocala, persoana respectiva poate 
-intampina dificultati in a separa logica de emotie, capul de inima. */`,
-};
-cifrele casei: `/* Casa
+intampina dificultati in a separa logica de emotie, capul de inima. `,
+//
+"Cifrele casei": ` Casa
 Vibratia 1
 Numärul 1 aratä inceputul si originea energiei, numärul impulsului primar. Într-un astfel de apartáment se va simfi destul de bine un om
 care tinde sắ devină conducätor, are idei avansate si poate sã deschidã drumul celorlalti. Este un apartament bun pentru oricine care încearcã sã-si exprime individualitatea, creativitatea, ambitia si
@@ -2413,9 +2421,9 @@ Acestea
 fiind spuse trebuie sã mai adaug încà ceva informatii in plus. Toate apartamentele cu cifrele de vibratie 2, 4, 6, 8, sunt mai mult feminine
 si în acestea se simt mai mult atrase femeile. Partea slabă a omenirii, din multimea de apartamente tind sã le aleagã anume pe acestea deoarece în aceste vibratii ele se simt în largu lor. Aceste apartamente sunt conduse de principiul pasiv, asimilare,atragere si au nevoie de o anume conlucrare cu ele.
 Apartamentele cu cifrele impare, 1,3,5,7 si 9 sunt mai mult masculine, conduse de principiul activ si sunt bune pentru afaceri, pentru a nu träi în ele ci doar a te întoarce in ele, pentru că peste un
-timp din nou sã pleci in societate, pe când cifrele pare 2, 4, 6 si 8 sunt mai mult inclinate sã te atragã din societate spre casã, să 'te mentinà sä lucrezi pentru casa,sã dai casei un anumit timp din viată. */`,
-
-compatibilitate: `/* COMPATIBILITATE
+timp din nou sã pleci in societate, pe când cifrele pare 2, 4, 6 si 8 sunt mai mult inclinate sã te atragã din societate spre casã, să 'te mentinà sä lucrezi pentru casa,sã dai casei un anumit timp din viată. `,
+  //
+"Compatibilitate3: ` COMPATIBILITATE
 CEEA CE NE LEAGA ( GOLUL, PODUL DE LEGATURA)
  • CAND PODUL ESTE 0
  Cand diferenta intre el si ea este “0” chiar daca ea este 11 , el 20 (”2”) vibratiile 
@@ -2709,6 +2717,6 @@ vrea in Spania , tu nu vrei.
  • Daca obtinem 22
  • Poate interveni in calea fericirii voastre avorturile , abandonarea copiilor, tot ce 
 implica acestea. Copii dintr-o alta casnicie, insasi ideea de a avea un copil : Ea 
-vrea, tu nu. */`,
+vrea, tu nu. `,
 };
 
