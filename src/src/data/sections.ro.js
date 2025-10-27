@@ -2710,5 +2710,5 @@ vrea in Spania , tu nu vrei.
  • Poate interveni in calea fericirii voastre avorturile , abandonarea copiilor, tot ce 
 implica acestea. Copii dintr-o alta casnicie, insasi ideea de a avea un copil : Ea 
 vrea, tu nu. */`,
-
-export default ro;
+};
+export default sectionsRo;
