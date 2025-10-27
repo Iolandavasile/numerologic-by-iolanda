@@ -1,4 +1,4 @@
-export default {
+window.sectionsRO = {
  
 "Vibratia interioara": ` 
 Plusuri 1
