@@ -326,8 +326,7 @@ să înveți să-ți manifești potențialul interior în plan social, prin acț
 9. Luna 9 – Vibrația Exterioară 9
 – Ești perceput ca o persoană caldă, empatică, vizionară.
 – Ai magnetism spiritual și atragi oameni care caută sens.
-– Ai grijă să nu te pierzi în emoțiile celorlalți. 
- `,
+– Ai grijă să nu te pierzi în emoțiile celorlalți. `,
   //
 "Vibratia cosmica": ` Este rezultatul ultimelor doua cifre ale anului de nastere , reducandu-l la o singura cifra.
  Anul nasterii:
@@ -809,7 +808,7 @@ obligatoriu, vei intelege ca ai in fata ta un om carismatic si romantic. Acest l
 este foarte sexi. Daca partenerul tau este 9 te asteapta o partida romantica, fiind foarte 
 important pentru el armonia si intelegerea reciproca! Daca vor lipsi acestea, 9 tinde catre pacea lui interioara `,
 
-  // 2) Codul personalizat + Matrița Psiho-Energo-Informațională
+  // 
 "Codul personalizat": ` Codul Personalizat al omului
  •Calculul cifrului numerologic.Calcularea corecta a codului numerologic este esentiala pentru 
 sanatatea analizei numerologice ulterioare!
@@ -1401,7 +1400,7 @@ Lipsă de dorință, motivație, plăcere.
 Poate fi blocat sexual sau afectiv.
 👉 Lecție: să se redescopere prin contactul cu trupul, arta și bucuria de a trăi. `,
   //
-   "Fluxul Energetic prin Vectori" `
+   "Fluxul Energetic prin Vectori": `
 
 (Cum curge energia prin matricea psiho-energo-informațională)
 
@@ -2357,7 +2356,7 @@ Se poate spune cá spiritul apartamentului este destul de gelos si de
 aceea nu se recomandà atunci când và întoarceti de la serviciu spre
 casà să mai intrati si în alte case. Dacà intr-un astfel de apartament
 sotul isi insealä sotia sau invers - se va afla neaprat. Acest numär atrage sprè el foarte multi vizitatori, totdeauna cineva iti bate la
-บรุส.
+usa.
 Oamenii se simt bine 'aici, dar fiecare isi va lãsã in interiorul apartamentului propria amprentà.
 Toate scandalurile pornesc din cauza cuiva din afara casei, acest numär este foarte mult influentat din exterior. Fiti atenti pe cine invitati inäuntru deoarece acest număr este cel mai des prâdat.
 Aici se intâmplà cele mai multe traume din motive de neatentie.
@@ -2423,7 +2422,7 @@ si în acestea se simt mai mult atrase femeile. Partea slabă a omenirii, din mu
 Apartamentele cu cifrele impare, 1,3,5,7 si 9 sunt mai mult masculine, conduse de principiul activ si sunt bune pentru afaceri, pentru a nu träi în ele ci doar a te întoarce in ele, pentru că peste un
 timp din nou sã pleci in societate, pe când cifrele pare 2, 4, 6 si 8 sunt mai mult inclinate sã te atragã din societate spre casã, să 'te mentinà sä lucrezi pentru casa,sã dai casei un anumit timp din viată. `,
   //
-"Compatibilitate3: ` COMPATIBILITATE
+"Compatibilitatea": ` COMPATIBILITATE
 CEEA CE NE LEAGA ( GOLUL, PODUL DE LEGATURA)
  • CAND PODUL ESTE 0
  Cand diferenta intre el si ea este “0” chiar daca ea este 11 , el 20 (”2”) vibratiile 
