@@ -4,9 +4,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Numerologic by Iolanda</title>
+
+    <!-- Font modern + stil rapid de bază -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stil general minimal pentru fundal -->
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: #000;
+        color: #fff;
+        font-family: "Montserrat", sans-serif;
+      }
+      #root {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        width: 100%;
+      }
+      .loading-text {
+        text-align: center;
+        font-size: 1.2rem;
+        opacity: 0.8;
+        animation: pulse 1.5s infinite;
+      }
+      @keyframes pulse {
+        0% { opacity: 0.6; }
+        50% { opacity: 1; }
+        100% { opacity: 0.6; }
+      }
+    </style>
   </head>
-  <body style="margin:0; background:#000; color:white;">
-    <div id="root"></div>
+
+  <body>
+    <!-- Aici React va încărca aplicația -->
+    <div id="root">
+      <div class="loading-text">🔮 Se încarcă aplicația Numerologic by Iolanda...</div>
+    </div>
+
+    <!-- Leagă aplicația React -->
     <script type="module" src="./src/main.jsx"></script>
   </body>
 </html>
