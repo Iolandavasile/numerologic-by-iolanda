@@ -52,7 +52,7 @@ function parseDMY(input) {
 
 // ---------- Codul personal ----------
 function personalCode(d, m, y) {
-  const digits = onlyDigits(`${d}${m}${y}`).split("").map(Number);
+  const digits = onlyDigits(`${String(d).padStart(2,"0")}${String(m).padStart(2,"0")}${String(y)}`).split("").map(Number);
   const op1 = sum(digits);
   const op2 = sumDigits(op1);
   const firstDayDigit = Number(String(d)[0] || 0);
