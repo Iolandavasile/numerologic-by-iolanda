@@ -37,7 +37,7 @@ function calculate() {
   // formăm părțile fără zerouri inutile
 const dStr = String(d); // ziua fără zero în față
 const mStr = String(m); // luna fără zero în față
-const yStr = String(y); // anul fără zero
+const yStr = String(y); // anul fără zero la jumate si fără zero în spate
 
 // codul folosit pentru calcule (fără spații)
 const codPersonal = `${dStr}${mStr}${yStr}${op1}${op2}${op3}${op4}`;
