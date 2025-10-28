@@ -15,7 +15,7 @@ Minusuri 1
 – se poate concentra puternic într-o acțiune, dar pierde imaginea de ansamblu;
 – lenevie, încăpățânare, agresiv, ambiția folosită nu în mod evolutiv, mândrie, învrăjbire, egocentric, slăbiciune, instabil, indirect, înfricoșare, dependențe.
 
-Lucruri Distructive
+Lucruri Distructive 1
 – mândria de sine;
 – maniacitate;
 – tiranie.ibrația 2
@@ -33,7 +33,7 @@ Minusuri 2
 – tendința de a se victimiza sau de a căuta validare;
 – indecizie, nehotărâre, frică de schimbare;
 – frică de singurătate, de neacceptare;
-– pasivitate, amânare, teamă de inițiativă.Vibrația 3
+– pasivitate, amânare, teamă de inițiativă.
 
 Plusuri 3
 • cel care dă formă ideilor, formează / reformează / sintetizează;
