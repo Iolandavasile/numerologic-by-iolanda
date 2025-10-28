@@ -12,27 +12,18 @@ document.getElementById("lang").addEventListener("change", e => {
 
 document.getElementById("calcBtn").addEventListener("click", calculate);
 
-function renderPersonalCode(op1, op2, op3, op4) {
-  const birthInput = document.querySelector("input[type='date'], input#birthdate");
-  if (!birthInput) return;
+function renderPersonalCode(op1, op2, op3, op4, d, m, y) {
+  const dStr = String(d).padStart(2, "0");
+  const mStr = String(m).padStart(2, "0");
+  const yStr = String(y);
 
-  const parts = birthInput.value.split("-");
-  let birthRaw = "";
-  if (parts.length === 3) {
-    // format: YYYY-MM-DD → DDMMYYYY
-    birthRaw = `${parts[2]}${parts[1]}${parts[0]}`;
-  } else {
-    // fallback dacă formatul e altfel (ex: 11-12-1981)
-    birthRaw = birthInput.value.replace(/\D/g, "");
-  }
-
-  const personalCode = `${birthRaw}${op1}${op2}${op3}${op4}`;
+  const personalCode = `${dStr}${mStr}${yStr}${op1}${op2}${op3}${op4}`;
   const box = document.getElementById("personal-code");
   if (box) box.textContent = `Cod personal: ${personalCode}`;
 }
 
 // …în funcția ta de calcul, DUPĂ ce ai calculat op1/op2/op3/op4:
-renderPersonalCode(op1, op2, op3, op4);
+renderPersonalCode(op1, op2, op3, op4, d, m, y);
 
 function calculate() {
   const dob = document.getElementById("dob").value;
