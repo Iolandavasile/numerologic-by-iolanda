@@ -81,19 +81,32 @@ button:hover { background: #ffe58f; }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 50px);
-  gap: 6px;
+  grid-template-columns: repeat(3, 80px); /* lățime mai mare */
+  gap: 12px; /* mai mult spațiu între casuțe */
   justify-content: center;
   margin-top: 10px;
 }
 
 .grid div {
+  width: 80px;
+  height: 80px;
   background: #222;
-  padding: 12px;
-  border-radius: 8px;
+  border-radius: 10px;
   text-align: center;
-  border: 1px solid #333;
+  border: 1px solid #ffd369;
   font-weight: bold;
+  font-size: 1.3rem; /* cifre mai mari */
+  color: #ffd369;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.grid div:hover {
+  transform: scale(1.05);
+  background: rgba(255, 215, 0, 0.15);
 }
 
 .section {
