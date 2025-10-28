@@ -19,7 +19,7 @@ function renderPersonalCode(op1, op2, op3, op4) {
   const parts = birthInput.value.split("-");
   let birthRaw = "";
   if (parts.length === 3) {
-    // format: DD-MM-YYYY
+    // format: YYYY-MM-DD → DDMMYYYY
     birthRaw = `${parts[2]}${parts[1]}${parts[0]}`;
   } else {
     // fallback dacă formatul e altfel (ex: 11-12-1981)
