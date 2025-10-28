@@ -162,7 +162,17 @@ function renderSections() {
 
     // ✅ dacă este "Vibrația interioară", afișăm doar vibrația VI calculată
     if (k.toLowerCase().includes("interioară") || k.toLowerCase().includes("interioara")) {
-      const viSection = SECTIONS[`Vibrația ${window.lastVI}`];
+      // căutăm orice cheie care conține numărul vibrației
+let viSection = "";
+for (const key in SECTIONS) {
+  if (key.includes(window.lastVI)) {
+    viSection += `<h4>${key}</h4>${SECTIONS[key]}`;
+  }
+}
+if (!viSection) {
+  viSection = `<p>Nu există interpretare pentru vibrația ${window.lastVI}.</p>`;
+}
+body.innerHTML = viSection;
       body.innerHTML = viSection
         ? `<h4>Vibrația interioară (${window.lastVI})</h4>${viSection}`
         : "<p>Nu există interpretare pentru această vibrație.</p>";
