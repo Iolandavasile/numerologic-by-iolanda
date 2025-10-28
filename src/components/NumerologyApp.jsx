@@ -79,6 +79,12 @@ function fillMatrixFromDigits(digits) {
   return out;
 }
 
+function reorderMatrixVertical(matrixArray) {
+  // Reordonăm pentru structura 147 / 258 / 369
+  const order = [0, 3, 6, 1, 4, 7, 2, 5, 8];
+  return order.map(i => matrixArray[i] || "");
+}
+
 function nameDigits(fullName) {
   const clean = normalizeName(fullName);
   const arr = [];
@@ -173,8 +179,8 @@ export default function NumerologyApp() {
 
   // ✅ Codul Personal concatenat
   const codPersonal = calc
-    ? `${calc.d}${calc.m}${calc.y}${calc.op1}${calc.op2}${calc.op3}${calc.op4}`
-    : "";
+  ? `${String(calc.d).padStart(2, "0")}${String(calc.m).padStart(2, "0")}${String(calc.y)}${calc.op1}${calc.op2}${calc.op3}${calc.op4}`
+  : "";
 
   const sectionOrder = Object.keys(texts || {});
 
