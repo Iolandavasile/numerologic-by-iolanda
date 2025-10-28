@@ -147,10 +147,15 @@ export default function NumerologyApp() {
     const { op1, op2, op3, op4, dStr, mStr, yStr } = personalCode(d, m, y);
     const vib = vibratii(d, m, y, keepMasters);
 
+    // 🔢 Matricea conține toate cifrele din codul personal (zi, lună, an + OP-uri)
     const personalString = `${dStr}${mStr}${yStr}${op1}${op2}${op3}${op4}`;
-    const digitsForMatrix = onlyDigits(personalString).split("").map(Number);
+    const digitsForMatrix = personalString
+      .split("")
+      .filter((ch) => /\d/.test(ch))
+      .map((ch) => Number(ch));
     const baseMatrix = fillMatrixFromDigits(digitsForMatrix);
 
+    // Matricea numelui
     const nDigits = nameDigits(fullName);
     const nameMatrix = fillMatrixFromDigits(nDigits);
     const { total, vowels, consonants } = nameNumbers(fullName);
