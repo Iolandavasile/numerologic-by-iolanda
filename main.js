@@ -56,11 +56,19 @@ function calculate() {
   const VCD = sum;
   const VD  = sumDigits(sum);
 
-  const codes = [
-    `OP1: ${op1}`, `OP2: ${op2}`, `OP3: ${op3}`, `OP4: ${op4}`,
-    `VI: ${VI}`, `VE: ${VE}`, `VC: ${VC}`, `VG: ${VG}`, `VCD: ${VCD}`, `VD: ${VD}`
-  ];
-  document.getElementById("codes").innerHTML = codes.map(c => `<div>${c}</div>`).join("");
+ // ✅ Afișăm doar vibrațiile, în ordinea dorită
+const codes = [
+  `VI: ${VI}`,
+  `VE: ${VE}`,
+  `VC: ${VC}`,
+  `VG: ${VG}`,
+  `VCD: ${VCD}`,
+  `VD: ${VD}`
+];
+
+// Afișare ordonată (poți adăuga stiluri CSS dacă vrei)
+document.getElementById("codes").innerHTML =
+  codes.map(c => `<div class="vibration-box">${c}</div>`).join("");
 
   // --- MATRICEA de bază: DOAR cifrele din codul personal complet (fără spații) ---
   renderMatrix("matrixDate", codPersonal.split("").map(Number));
