@@ -52,13 +52,20 @@ function parseDMY(input) {
 
 // ---------- Codul personal ----------
 function personalCode(d, m, y) {
-  const digits = onlyDigits(`${String(d).padStart(2,"0")}${String(m).padStart(2,"0")}${String(y)}`).split("").map(Number);
-  const op1 = sum(digits);
-  const op2 = sumDigits(op1);
-  const firstDayDigit = Number(String(d)[0] || 0);
-  let op3 = Math.abs(op1 - 2 * firstDayDigit);
-  const op4 = sumDigits(op3);
-  return { op1, op2, op3, op4 };
+  // asigurăm ordinea corectă zi-lună-an
+  const dStr = String(d).padStart(2, "0");
+  const mStr = String(m).padStart(2, "0");
+  const yStr = String(y);
+  const digits = onlyDigits(`${dStr}${mStr}${yStr}`).split("").map(Number);
+
+  // calcule clasice pentru codul personal
+  const op1 = sum(digits);                // Calea destinului
+  const op2 = sumDigits(op1);             // Destinul
+  const firstDayDigit = Number(String(dStr)[0] || 0);
+  const op3 = Math.abs(op1 - 2 * firstDayDigit); // Problemele karmice
+  const op4 = sumDigits(op3);             // Rezolvarea karmei
+
+  return { op1, op2, op3, op4, dStr, mStr, yStr };
 }
 
 // ---------- Matrice ----------
