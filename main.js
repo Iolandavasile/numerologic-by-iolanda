@@ -34,11 +34,19 @@ function calculate() {
   const op4 = sumDigits(op3);
 
   // === COD PERSONAL ===
-  const dStr = String(d).padStart(2, "0");
-  const mStr = String(m).padStart(2, "0");
-  const yStr = String(y);
-  const codPersonal = `${dStr}${mStr}${yStr}${op1}${op2}${op3}${op4}`;
+  // formăm părțile fără zerouri inutile
+const dStr = String(d); // ziua fără zero în față
+const mStr = String(m); // luna fără zero în față
+const yStr = String(y); // anul fără zero
+
+// codul folosit pentru calcule (fără spații)
+const codPersonal = `${dStr}${mStr}${yStr}${op1}${op2}${op3}${op4}`;
+
+// codul afișat cu spații frumos între grupe
 const codPersonalAfisat = `${dStr} ${mStr} ${yStr} ${op1} ${op2} ${op3} ${op4}`;
+
+const box = document.getElementById("personal-code");
+if (box) box.textContent = `Cod personal: ${codPersonalAfisat}`;
 
 const box = document.getElementById("personal-code");
 if (box) box.textContent = `Cod personal: ${codPersonalAfisat}`;
