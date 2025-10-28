@@ -50,6 +50,7 @@ function calculate() {
 
   // --- Vibrații ---
   const VI  = reduceKeep(sumDigits(d));
+  window.lastVI = VI; // 🔹 reținem vibrația interioară pentru interpretare
   const VE  = reduceKeep(sumDigits(m));
   const VC  = reduceKeep(sumDigits(Number(String(y).slice(-2))));
   const VG  = reduceKeep(sumDigits(d) + sumDigits(m));
@@ -147,18 +148,35 @@ function renderNameNumbers(name) {
 function renderSections() {
   const container = document.getElementById("sections");
   container.innerHTML = "";
+
   Object.keys(SECTIONS).forEach(k => {
     const div = document.createElement("div");
     div.className = "section";
+
     const btn = document.createElement("button");
     btn.textContent = k;
+
     const body = document.createElement("div");
     body.className = "body";
-    body.innerHTML = SECTIONS[k];
     body.style.display = "none";
+
+    // ✅ dacă este "Vibrația interioară", afișăm doar vibrația VI calculată
+    if (k.toLowerCase().includes("interioară") || k.toLowerCase().includes("interioara")) {
+      const viSection = SECTIONS[`Vibrația ${window.lastVI}`];
+      body.innerHTML = viSection
+        ? `<h4>Vibrația interioară (${window.lastVI})</h4>${viSection}`
+        : "<p>Nu există interpretare pentru această vibrație.</p>";
+    } else {
+      // restul secțiunilor rămân normale
+      body.innerHTML = SECTIONS[k];
+    }
+
     btn.onclick = () => {
-      body.style.display = body.style.display === "none" ? "block" : "none";
+      const visible = body.style.display === "block";
+      document.querySelectorAll(".section .body").forEach(b => (b.style.display = "none"));
+      body.style.display = visible ? "none" : "block";
     };
+
     div.appendChild(btn);
     div.appendChild(body);
     container.appendChild(div);
