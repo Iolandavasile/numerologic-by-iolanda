@@ -110,7 +110,7 @@ button:hover {
   background: #222;
   border-radius: 10px;
   text-align: center;
-  border: 1px solid #888 
+  border: 1px solid #888;  /* ✅ contur negru */
   font-weight: bold;
   font-size: 1.3rem;
   color: #fff;             /* ✅ text alb */
