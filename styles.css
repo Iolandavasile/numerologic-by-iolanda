@@ -93,15 +93,20 @@ button:hover { background: #ffe58f; }
   background: #222;
   border-radius: 10px;
   text-align: center;
-  border: 1px solid #ffd369;
+  border: 1px solid #fff;       /* ✅ contur alb */
   font-weight: bold;
-  font-size: 1.3rem; /* cifre mai mari */
-  color: #ffd369;
+  font-size: 1.3rem;
+  color: #fff;                  /* ✅ text alb */
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2); /* ✅ strălucire albă subtilă */
   transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.grid div:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.1); /* efect alb translucid */
 }
 
 .grid div:hover {
