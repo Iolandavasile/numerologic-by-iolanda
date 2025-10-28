@@ -38,9 +38,10 @@ function calculate() {
   const mStr = String(m).padStart(2, "0");
   const yStr = String(y);
   const codPersonal = `${dStr}${mStr}${yStr}${op1}${op2}${op3}${op4}`;
+const codPersonalAfisat = `${dStr} ${mStr} ${yStr} ${op1} ${op2} ${op3} ${op4}`;
 
-  const box = document.getElementById("personal-code");
-  if (box) box.textContent = `Cod personal: ${codPersonal}`;
+const box = document.getElementById("personal-code");
+if (box) box.textContent = `Cod personal: ${codPersonalAfisat}`;
 
   // === VIBRAȚII ===
   const VI = reduceKeep(sumDigits(d));
