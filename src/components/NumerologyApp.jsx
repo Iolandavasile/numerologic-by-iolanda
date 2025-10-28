@@ -78,9 +78,15 @@ function fillMatrixFromDigits(digits) {
 }
 
 // Reordonare matrice 147 / 258 / 369
+// ✅ corectare poziționare matrice 147 / 258 / 369
 function reorderMatrixVertical(matrixArray) {
-  const order = [0, 3, 6, 1, 4, 7, 2, 5, 8];
-  return order.map((i) => matrixArray[i] || "");
+  // Reordonăm pentru matricea verticală: 1-4-7 / 2-5-8 / 3-6-9
+  const reordered = [
+    matrixArray[0] || "", matrixArray[3] || "", matrixArray[6] || "",
+    matrixArray[1] || "", matrixArray[4] || "", matrixArray[7] || "",
+    matrixArray[2] || "", matrixArray[5] || "", matrixArray[8] || "",
+  ];
+  return reordered;
 }
 
 function nameDigits(fullName) {
