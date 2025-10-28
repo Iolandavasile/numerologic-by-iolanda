@@ -40,6 +40,21 @@ function calculate() {
   const op2 = sumDigits(op1);
   const op3 = Math.abs(op1 - 2 * Number(String(d)[0]));
   const op4 = sumDigits(op3);
+  // === COD NOU ===
+// funcție care generează codul personal complet
+function renderPersonalCode(op1, op2, op3, op4) {
+  const birthInput = document.querySelector("input[type='date'], input#birthdate");
+  if (!birthInput) return;
+  const birthRaw = birthInput.value.replace(/\D/g, ""); // ex: 11-12-1981 -> 11121981
+  const personalCode = `${birthRaw}${op1}${op2}${op3}${op4}`;
+  const box = document.getElementById("personal-code");
+  if (box) {
+    box.textContent = `Cod personal: ${personalCode}`;
+  }
+}
+
+// apel funcția imediat după calcul
+renderPersonalCode(op1, op2, op3, op4);
 
   const VI = reduceKeep(sumDigits(d));
   const VE = reduceKeep(sumDigits(m));
