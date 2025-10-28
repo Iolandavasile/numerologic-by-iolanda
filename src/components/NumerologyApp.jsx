@@ -150,14 +150,13 @@ export default function NumerologyApp() {
     // ✅ Matricea se bazează exact pe codul personal afișat
 const codPersonalComplet = `${dStr}${mStr}${yStr}${op1}${op2}${op3}${op4}`;
 
-// luăm fiecare caracter numeric exact din codul real
+// Luăm fiecare caracter numeric exact din codul complet
 const digitsForMatrix = codPersonalComplet
-  .toString()
   .split("")
-  .filter((c) => /[0-9]/.test(c))
-  .map((c) => Number(c));
+  .filter((ch) => /\d/.test(ch))
+  .map((ch) => Number(ch));
 
-// construim matricea doar din aceste cifre (fără recalcule)
+// Construim matricea doar din aceste cifre (fără recalculări)
 const baseMatrix = fillMatrixFromDigits(digitsForMatrix);
 
     // Matricea numelui
