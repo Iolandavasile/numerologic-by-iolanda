@@ -230,6 +230,43 @@ export default function NumerologyApp() {
           <p>VI: {calc.VI} | VE: {calc.VE} | VC: {calc.VC} | VG: {calc.VG} | VCD: {calc.VCD} | VD: {calc.VD}</p>
         </>
       )}
+      {/* 🔢 MATRICEA NUMEROLOGICĂ */}
+{calc && (
+  <>
+    <h2 style={{ color: "#FFD700", marginTop: "20px" }}>Matricea numerologică</h2>
+
+    {(() => {
+      const matriceAfisare = reorderMatrixVertical(calc.baseMatrix);
+      return (
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "5px",
+            maxWidth: "300px",
+            margin: "10px auto",
+          }}
+        >
+          {matriceAfisare.map((val, i) => (
+            <div
+              key={i}
+              style={{
+                border: "1px solid #FFD700",
+                minHeight: "40px",
+                textAlign: "center",
+                fontSize: "1.2rem",
+                lineHeight: "40px",
+              }}
+            >
+              {val || ""}
+            </div>
+          ))}
+        </div>
+      );
+    })()}
+  </>
+)}
+
     </div>
   );
 }
