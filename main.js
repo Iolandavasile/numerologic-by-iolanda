@@ -19,42 +19,42 @@ function calculate() {
 
   document.getElementById("results").classList.remove("hidden");
 
-  // extragem data
+  // --- Data de naștere ---
   const [year, month, day] = dob.split("-");
   const d = +day, m = +month, y = +year;
 
-  // cifrele din data
+  // Cifrele brute pentru OP-uri (inclusiv zerourile din an, cum e corect în numerologie)
   const digits = `${d}${m}${y}`.split("").map(Number);
 
-  // calcule OP1-4
+  // --- OP1–OP4 ---
   const sum = digits.reduce((a, b) => a + b, 0);
   const op1 = sum;
   const op2 = sumDigits(op1);
   const op3 = Math.abs(op1 - 2 * Number(String(d)[0] || 0));
   const op4 = sumDigits(op3);
 
-  // === COD PERSONAL ===
-  // formăm părțile fără zerouri inutile
-const dStr = String(d); // ziua fără zero în față
-const mStr = String(m); // luna fără zero în față
-const yStr = String(y); // anul fără zero la jumate si fără zero în spate
+  // --- Cod personal (afisare fara zerouri inutile la zi/lună si CU anul fara zerouri) ---
+  const dStr = String(d);       // zi fără zero în față
+  const mStr = String(m);       // lună fără zero în față
+  let   yStr = String(y).replace(/0/g, ""); // eliminăm TOATE zerourile din an
+  if (yStr === "") yStr = "0";  // caz extrem (ex: 0000)
 
-// codul folosit pentru calcule (fără spații)
-const codPersonal = `${dStr}${mStr}${yStr}${op1}${op2}${op3}${op4}`;
+  // Pentru calcule (matrice) folosim șirul fără spații:
+  const codPersonal = `${dStr}${mStr}${yStr}${op1}${op2}${op3}${op4}`;
 
-// codul afișat cu spații frumos între grupe
-const codPersonalAfisat = `${dStr} ${mStr} ${yStr} ${op1} ${op2} ${op3} ${op4}`;
+  // Pentru afișare cu spații între grupe:
+  const codPersonalAfisat = `${dStr} ${mStr} ${yStr} ${op1} ${op2} ${op3} ${op4}`;
 
-const box = document.getElementById("personal-code");
-if (box) box.textContent = `Cod personal: ${codPersonalAfisat}`;
+  let box = document.getElementById("personal-code");
+  if (box) box.textContent = `Cod personal: ${codPersonalAfisat}`;
 
-  // === VIBRAȚII ===
-  const VI = reduceKeep(sumDigits(d));
-  const VE = reduceKeep(sumDigits(m));
-  const VC = reduceKeep(sumDigits(Number(String(y).slice(-2))));
-  const VG = reduceKeep(sumDigits(d) + sumDigits(m));
+  // --- Vibrații ---
+  const VI  = reduceKeep(sumDigits(d));
+  const VE  = reduceKeep(sumDigits(m));
+  const VC  = reduceKeep(sumDigits(Number(String(y).slice(-2))));
+  const VG  = reduceKeep(sumDigits(d) + sumDigits(m));
   const VCD = sum;
-  const VD = sumDigits(sum);
+  const VD  = sumDigits(sum);
 
   const codes = [
     `OP1: ${op1}`, `OP2: ${op2}`, `OP3: ${op3}`, `OP4: ${op4}`,
@@ -62,11 +62,10 @@ if (box) box.textContent = `Cod personal: ${codPersonalAfisat}`;
   ];
   document.getElementById("codes").innerHTML = codes.map(c => `<div>${c}</div>`).join("");
 
-  // === MATRICEA de bază ===
-  // folosim cifrele exacte din codul personal
+  // --- MATRICEA de bază: DOAR cifrele din codul personal complet (fără spații) ---
   renderMatrix("matrixDate", codPersonal.split("").map(Number));
 
-  // === MATRICEA numelui ===
+  // --- MATRICEA numelui ---
   renderMatrix("matrixName", nameDigits(name));
 
   renderNameNumbers(name);
@@ -110,7 +109,7 @@ function renderMatrix(id, digits) {
     cells[2] || "", cells[5] || "", cells[8] || ""
   ];
 
-  // afisăm – celulele goale rămân goale
+  // afișăm – celulele goale rămân goale
   const html = reordered.map(v => `<div>${v || ""}</div>`).join("");
   document.getElementById(id).innerHTML = html;
 }
