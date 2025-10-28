@@ -49,8 +49,8 @@ function calculate() {
   if (box) box.textContent = `Cod personal: ${codPersonalAfisat}`;
 
   // --- Vibrații ---
-  const VI  = reduceKeep(sumDigits(d));
-  window.lastVI = VI; // 🔹 reținem vibrația interioară pentru interpretare
+ const VI = reduceKeep(sumDigits(d));
+window.lastVI = VI; // <- adaugă linia asta
   const VE  = reduceKeep(sumDigits(m));
   const VC  = reduceKeep(sumDigits(Number(String(y).slice(-2))));
   const VG  = reduceKeep(sumDigits(d) + sumDigits(m));
@@ -160,24 +160,19 @@ function renderSections() {
     body.className = "body";
     body.style.display = "none";
 
-    // ✅ dacă este "Vibrația interioară", afișăm doar vibrația VI calculată
-    if (k.toLowerCase().includes("interioară") || k.toLowerCase().includes("interioara")) {
-      // căutăm orice cheie care conține numărul vibrației
-let viSection = "";
-for (const key in SECTIONS) {
-  if (key.includes(window.lastVI)) {
-    viSection += `<h4>${key}</h4>${SECTIONS[key]}`;
-  }
-}
-if (!viSection) {
-  viSection = `<p>Nu există interpretare pentru vibrația ${window.lastVI}.</p>`;
-}
-body.innerHTML = viSection;
-      body.innerHTML = viSection
-        ? `<h4>Vibrația interioară (${window.lastVI})</h4>${viSection}`
-        : "<p>Nu există interpretare pentru această vibrație.</p>";
+    // --- pentru Vibrația interioară afișăm DOAR vibrația VI ---
+    const keyNoDiacritics = k.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
+    const isVIButton = keyNoDiacritics.includes("vibratia interioara");
+
+    if (isVIButton) {
+      const full = (SECTIONS["Vibratia interioara"] ?? SECTIONS["Vibrația interioară"] ?? "").toString();
+      const vi = Number(window.lastVI || 0);
+      const extracted = extractVibrationBlock(full, vi);
+      body.innerHTML = extracted
+        ? `<h4>Vibrația interioară (${vi})</h4>${extracted}`
+        : `<h4>Vibrația interioară (${vi})</h4><p>Nu există interpretare pentru vibrația ${vi}.</p>`;
     } else {
-      // restul secțiunilor rămân normale
+      // restul secțiunilor rămân neschimbate
       body.innerHTML = SECTIONS[k];
     }
 
@@ -192,3 +187,22 @@ body.innerHTML = viSection;
     container.appendChild(div);
   });
 }
+function extractVibrationBlock(fullText, n) {
+  if (!fullText) return "";
+
+  const text = fullText.replace(/\r\n/g, "\n");
+  const re = /(^|\n)\s*Plusuri\s+(\d+)[^\n]*\n([\s\S]*?)(?=(?:^|\n)\s*Plusuri\s+\d+\b|$)/gi;
+
+  let match, wanted = "";
+  while ((match = re.exec(text)) !== null) {
+    const num = Number(match[2]);
+    const content = match[3].trim();
+    if (num === Number(n)) {
+      wanted = `<h5>Plusuri ${n}</h5>\n${content}`;
+      break;
+    }
+  }
+
+  return wanted;
+}
+
