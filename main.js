@@ -74,9 +74,14 @@ renderPersonalCode(op1, op2, op3, op4);
   ];
   document.getElementById("codes").innerHTML = codes.map(c=>`<div>${c}</div>`).join("");
 
-  renderMatrix("matrixDate", digits.concat(
-    [...String(op1+op2+op3+op4)].map(Number)
-  ));
+ // ✅ Matricea se bazează exact pe codul personal (zi, lună, an, OP1, OP2, OP3, OP4)
+const dStr = String(d).padStart(2, "0");
+const mStr = String(m).padStart(2, "0");
+const yStr = String(y);
+const codPersonal = `${dStr}${mStr}${yStr}${op1}${op2}${op3}${op4}`;
+
+// Trimitem în renderMatrix exact cifrele codului personal
+renderMatrix("matrixDate", codPersonal.split("").map(Number));
   renderMatrix("matrixName", nameDigits(name));
 
   renderNameNumbers(name);
@@ -90,18 +95,23 @@ function charVal(ch){ const c=ch.toUpperCase().charCodeAt(0); if(c<65||c>90)retu
 function nameDigits(name){ return name.toUpperCase().split("").map(charVal).filter(Boolean); }
 
 function renderMatrix(id, digits) {
-  // Inițializăm 9 celule goale (pentru cifrele 1-9)
+  // Inițializăm 9 celule (pentru cifrele 1-9)
   const cells = Array(9).fill("");
 
-  // Adăugăm fiecare cifră în poziția corespunzătoare
+  // Adăugăm fiecare cifră în poziția corectă
   digits.forEach(n => {
     if (n >= 1 && n <= 9) cells[n - 1] += n;
   });
 
-  // Reorganizăm matricea pe coloane 147 / 258 / 369
-  const order = [0, 3, 6, 1, 4, 7, 2, 5, 8];
+  // ✅ Reordonăm pentru structura verticală 147 / 258 / 369
+  const reordered = [
+    cells[0] || "", cells[3] || "", cells[6] || "",
+    cells[1] || "", cells[4] || "", cells[7] || "",
+    cells[2] || "", cells[5] || "", cells[8] || ""
+  ];
 
-  const html = order.map(i => `<div>${cells[i] || ""}</div>`).join("");
+  // ✅ Afișăm matricea (celulele goale rămân goale)
+  const html = reordered.map(v => `<div>${v || ""}</div>`).join("");
   document.getElementById(id).innerHTML = html;
 }
 
