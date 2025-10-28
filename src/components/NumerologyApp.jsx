@@ -77,51 +77,11 @@ function fillMatrixFromDigits(digits) {
   return out;
 }
 
-// ✅ Funcția nouă: reordonare matrice 147 / 258 / 369
+// Reordonare matrice 147 / 258 / 369
 function reorderMatrixVertical(matrixArray) {
   const order = [0, 3, 6, 1, 4, 7, 2, 5, 8];
-  return order.map(i => matrixArray[i] || "");
+  return order.map((i) => matrixArray[i] || "");
 }
 
 function nameDigits(fullName) {
-  const clean = normalizeName(fullName);
-  const arr = [];
-  for (const ch of clean) {
-    if (/[A-Z]/.test(ch)) {
-      arr.push(charVal(ch));
-    }
-  }
-  return arr;
-}
-
-function nameNumbers(fullName) {
-  const clean = normalizeName(fullName);
-  let total = 0, vowels = 0, consonants = 0;
-  for (const ch of clean) {
-    if (!/[A-Z]/.test(ch)) continue;
-    const v = charVal(ch);
-    total += v;
-    if (VOWELS.has(ch)) vowels += v;
-    else consonants += v;
-  }
-  return { total, vowels, consonants };
-}
-
-function hereditaryNumber(fullName) {
-  const parts = normalizeName(fullName).split(/\s+/).filter(Boolean);
-  if (!parts.length) return 0;
-  const surname = parts[parts.length - 1];
-  let s = 0;
-  for (const ch of surname) {
-    if (/[A-Z]/.test(ch)) s += charVal(ch);
-  }
-  return s;
-}
-
-// ---------- Vibrații ----------
-function vibratii(d, m, y, keepMasters = true) {
-  const VI_raw = sumDigits(d);
-  const VI = reduceKeep(VI_raw, keepMasters);
-  const VE = reduceKeep(sumDigits(m), keepMasters);
-  const last2 = Number(String(y).slice(-2));
-  co
+  const clean = normalizeNa
