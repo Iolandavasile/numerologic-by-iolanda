@@ -46,12 +46,16 @@ function calculate() {
 function renderPersonalCode(op1, op2, op3, op4) {
   const birthInput = document.querySelector("input[type='date'], input#birthdate");
   if (!birthInput) return;
-  const birthRaw = birthInput.value.replace(/\D/g, ""); // ex: 11-12-1981 -> 11121981
+
+  // extragem valorile din input (în format YYYY-MM-DD)
+  const [year, month, day] = birthInput.value.split("-");
+
+  // formăm codul în ordinea dorită: zi + lună + an
+  const birthRaw = `${day}${month}${year}`; // ex: 11121981
+
   const personalCode = `${birthRaw}${op1}${op2}${op3}${op4}`;
   const box = document.getElementById("personal-code");
-  if (box) {
-    box.textContent = `Cod personal: ${personalCode}`;
-  }
+  if (box) box.textContent = `Cod personal: ${personalCode}`;
 }
 
 // apel funcția imediat după calcul
@@ -85,10 +89,20 @@ function reduceKeep(n){ while(n>9)n=sumDigits(n); return n; }
 function charVal(ch){ const c=ch.toUpperCase().charCodeAt(0); if(c<65||c>90)return 0; return ((c-64-1)%9)+1; }
 function nameDigits(name){ return name.toUpperCase().split("").map(charVal).filter(Boolean); }
 
-function renderMatrix(id, digits){
+function renderMatrix(id, digits) {
+  // Inițializăm 9 celule goale (pentru cifrele 1-9)
   const cells = Array(9).fill("");
-  digits.forEach(n=>{ if(n>=1 && n<=9) cells[n-1] += n; });
-  document.getElementById(id).innerHTML = cells.map((v,i)=>`<div>${v||i+1}</div>`).join("");
+
+  // Adăugăm fiecare cifră în poziția corespunzătoare
+  digits.forEach(n => {
+    if (n >= 1 && n <= 9) cells[n - 1] += n;
+  });
+
+  // Reorganizăm matricea pe coloane 147 / 258 / 369
+  const order = [0, 3, 6, 1, 4, 7, 2, 5, 8];
+
+  const html = order.map(i => `<div>${cells[i] || ""}</div>`).join("");
+  document.getElementById(id).innerHTML = html;
 }
 
 function renderNameNumbers(name){
