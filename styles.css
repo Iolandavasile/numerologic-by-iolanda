@@ -75,8 +75,10 @@ button:hover { background: #ffe58f; }
 .matrices {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
+  align-items: flex-start;
+  gap: 60px; /* ✅ spațiu mai mare între cele două matrice */
+  margin-top: 20px;
 }
 
 .grid {
@@ -85,6 +87,47 @@ button:hover { background: #ffe58f; }
   gap: 12px; /* mai mult spațiu între casuțe */
   justify-content: center;
   margin-top: 10px;
+}
+
+.matrix-block {
+  text-align: center;
+}
+
+.matrix-block h3 {
+  color: #ffd369;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  text-align: center; /* ✅ titlul centrat exact deasupra fiecărei matrice */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  gap: 12px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.grid div {
+  width: 80px;
+  height: 80px;
+  background: #222;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #888;          /* ✅ contur gri */
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.grid div:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .grid div {
