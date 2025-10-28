@@ -50,7 +50,8 @@ function calculate() {
 
   // --- Vibrații ---
  const VI = reduceKeep(sumDigits(d));
-window.lastVI = VI; // <- adaugă linia asta
+const VI = reduceKeep(sumDigits(d));
+window.lastVI = VI;
   const VE  = reduceKeep(sumDigits(m));
   const VC  = reduceKeep(sumDigits(Number(String(y).slice(-2))));
   const VG  = reduceKeep(sumDigits(d) + sumDigits(m));
