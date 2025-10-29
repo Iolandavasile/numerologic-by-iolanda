@@ -237,7 +237,7 @@ function extractVibrationBlock(fullText, n, type = "interioara") {
   let pattern = "";
 
   if (type.includes("interioara")) {
-    // plusuri / minusuri
+    // Plusuri / Minusuri
     pattern = `(^|\\n)\\s*plusuri\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)\\s*plusuri\\s*\\d+\\b|$)`;
   } 
   else if (type.includes("exterioara")) {
@@ -249,7 +249,17 @@ function extractVibrationBlock(fullText, n, type = "interioara") {
     pattern = `(^|\\n).*vibrati[ae]?\\s*cosmic[ae]?\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n).*vibrati[ae]?\\s*cosmic[ae]?\\s*\\d+\\b|$)`;
   } 
   else if (type.includes("generala") || type.includes("globala")) {
-    // Ex: "Vibratie globala 4" sau "Vibra
+    // Ex: "Vibratie globala 4" sau "Vibratie generala 4"
+    pattern = `(^|\\n).*vibrati[ae]?\\s*(globala|generala)\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n).*vibrati[ae]?\\s*(globala|generala)\\s*\\d+\\b|$)`;
+  }
+
+  const re = new RegExp(pattern, "i");
+  const match = re.exec(text);
+
+  if (!match) {
+    console.warn(`❌ Nu s-a găsit bloc pentru ${type} ${n}`);
+    return "";
+  }
 
   console.log(`✅ Găsit bloc ${type} ${n}:`, match[0].slice(0, 100));
   return match[0].trim();
@@ -273,6 +283,6 @@ function formatTextWithNewlines(text) {
   .replace(/(Minusuri\s*\d*)/gi, "<br><strong>$1</strong>")
   .replace(/(Lucruri\s*Distructive)/gi, "<br><strong>$1</strong>");
 }  
-} // <- aceasta închide fișierul complet
+
 
 
