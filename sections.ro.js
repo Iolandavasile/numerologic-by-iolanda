@@ -284,47 +284,47 @@ Este legată de comportament, relaționare, reacție și atitudine.
 
 📖 **Scopul vibrației exterioare:**  
 să înveți să-ți manifești potențialul interior în plan social, prin acțiune, comunicare și relații. 
-1. Luna 1 / 10 – Vibrația Exterioară 1
+Luna 1 / 10 – Vibrația Exterioară 1
 – Ești perceput ca o persoană independentă, curajoasă, activă.
 – Atragi atenția prin forță, ambiție și determinare.
 – Ai spirit de lider, dar ai grijă să nu devii autoritar.
 
-2. Luna 2 / 11 – Vibrația Exterioară 2
+Luna 2 / 11 – Vibrația Exterioară 2
 – Ești blând, atent, echilibrat, diplomat.
 – Creezi armonie în jurul tău, dar uneori pari prea sensibil.
 – Ai farmec natural și capacitate de adaptare la ceilalți.
 
-3. Luna 3 / 12 – Vibrația Exterioară 3
+Luna 3 / 12 – Vibrația Exterioară 3
 – Ești jovial, comunicativ, expresiv.
 – Ai un spirit creativ și o energie tinerească.
 – Atragi simpatia oamenilor, dar ai grijă să nu te pierzi în superficialitate.
 
-4. Luna 4 – Vibrația Exterioară 4
+Luna 4 – Vibrația Exterioară 4
 – Ești perceput ca o persoană serioasă, stabilă și muncitoare.
 – Inspiri încredere și ordine.
 – Evită rigiditatea și deschiderea redusă spre nou.
 
-5. Luna 5 – Vibrația Exterioară 5
+Luna 5 – Vibrația Exterioară 5
 – Ești carismatic, liber, sociabil, atras de schimbare.
 – Iubești libertatea și diversitatea, dar uneori pari instabil.
 – Ești adaptabil și ușor de iubit pentru naturalețea ta.
 
-6. Luna 6 – Vibrația Exterioară 6
+Luna 6 – Vibrația Exterioară 6
 – Ești protector, iubitor, grijuliu, ai simț artistic.
 – Cauți armonie și echilibru în familie și relații.
 – Poți deveni critic sau perfecționist dacă nu te simți apreciat.
 
-7. Luna 7 – Vibrația Exterioară 7
+Luna 7 – Vibrația Exterioară 7
 – Ești perceput ca profund, misterios, introspectiv.
 – Ai un aer enigmatic, uneori greu de descifrat.
 – Ești atras de studiu, spiritualitate, introspecție.
 
-8. Luna 8 – Vibrația Exterioară 8
+Luna 8 – Vibrația Exterioară 8
 – Inspiri autoritate, forță și eficiență.
 – Ai talent de lider, atragi succesul material.
 – Evită controlul excesiv sau nevoia de a domina.
 
-9. Luna 9 – Vibrația Exterioară 9
+Luna 9 – Vibrația Exterioară 9
 – Ești perceput ca o persoană caldă, empatică, vizionară.
 – Ai magnetism spiritual și atragi oameni care caută sens.
 – Ai grijă să nu te pierzi în emoțiile celorlalți. `,
