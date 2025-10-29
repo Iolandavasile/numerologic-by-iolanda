@@ -48,17 +48,21 @@ function calculate() {
   let box = document.getElementById("personal-code");
   if (box) box.textContent = `Cod personal: ${codPersonalAfisat}`;
 
-  // --- Vibrații ---
- const VI = reduceKeep(sumDigits(d));
-  window.lastVI = VI;
-  const VE  = reduceKeep(sumDigits(m));
-  window.lastVI = VE;
-  const VC  = reduceKeep(sumDigits(Number(String(y).slice(-2))));
-  window.lastVI = VC;
-  const VG  = reduceKeep(sumDigits(d) + sumDigits(m));
-  window.lastVI = VG;
-  const VCD = sum;
-  const VD  = sumDigits(sum);
+ // --- Vibrații ---
+const VI = reduceKeep(sumDigits(d));
+window.lastVI = VI;
+
+const VE = reduceKeep(sumDigits(m));
+window.lastVE = VE;
+
+const VC = reduceKeep(sumDigits(Number(String(y).slice(-2))));
+window.lastVC = VC;
+
+const VG = reduceKeep(sumDigits(d) + sumDigits(m));
+window.lastVG = VG;
+
+const VCD = sum;
+const VD = sumDigits(sum);
 
  // ✅ Afișăm doar vibrațiile, în ordinea dorită
 const codes = [
