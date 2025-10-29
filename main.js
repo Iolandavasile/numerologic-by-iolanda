@@ -52,11 +52,11 @@ function calculate() {
  const VI = reduceKeep(sumDigits(d));
   window.lastVI = VI;
   const VE  = reduceKeep(sumDigits(m));
-  window.lastVI = VI;
+  window.lastVI = VE;
   const VC  = reduceKeep(sumDigits(Number(String(y).slice(-2))));
-  window.lastVI = VI;
+  window.lastVI = VC;
   const VG  = reduceKeep(sumDigits(d) + sumDigits(m));
-  window.lastVI = VI;
+  window.lastVI = VG;
   const VCD = sum;
   const VD  = sumDigits(sum);
 
