@@ -184,7 +184,7 @@ function renderSections() {
     else if (keyLower.includes("exterioară") || keyLower.includes("exterioara")) {
       label = "Vibrația exterioară";
       const ve = window.lastVE || "?";
-      extracted = extractVibrationBlock(SECTIONS[k], ve);
+      extracted = extractVibrationBlock(SECTIONS[k], ve, "exterioara");
       body.innerHTML = extracted
         ? `<h4>${label} (${ve})</h4>${formatTextWithNewlines(extracted)}`
         : `<h4>${label} (${ve})</h4><p>Nu există interpretare pentru vibrația ${ve}.</p>`;
@@ -193,7 +193,7 @@ function renderSections() {
     else if (keyLower.includes("cosmică") || keyLower.includes("cosmica")) {
       label = "Vibrația cosmică";
       const vc = window.lastVC || "?";
-      extracted = extractVibrationBlock(SECTIONS[k], vc);
+      extracted = extractVibrationBlock(SECTIONS[k], vc, "cosmica");
       body.innerHTML = extracted
         ? `<h4>${label} (${vc})</h4>${formatTextWithNewlines(extracted)}`
         : `<h4>${label} (${vc})</h4><p>Nu există interpretare pentru vibrația ${vc}.</p>`;
@@ -202,7 +202,7 @@ function renderSections() {
     else if (keyLower.includes("generală") || keyLower.includes("generala")) {
       label = "Vibrația generală";
       const vg = window.lastVG || "?";
-      extracted = extractVibrationBlock(SECTIONS[k], vg);
+      extracted = extractVibrationBlock(SECTIONS[k], vg, "generala");
       body.innerHTML = extracted
         ? `<h4>${label} (${vg})</h4>${formatTextWithNewlines(extracted)}`
         : `<h4>${label} (${vg})</h4><p>Nu există interpretare pentru vibrația ${vg}.</p>`;
@@ -223,23 +223,33 @@ function renderSections() {
     container.appendChild(div);
   });
 }
-function extractVibrationBlock(fullText, n) {
+function extractVibrationBlock(fullText, n, type = "interioara") {
   if (!fullText) return "";
 
-  const text = fullText.replace(/\r\n/g, "\n");
-  const re = /(^|\n)\s*Plusuri\s+(\d+)[^\n]*\n([\s\S]*?)(?=(?:^|\n)\s*Plusuri\s+\d+\b|$)/gi;
+  const text = fullText
+    .toString()
+    .replace(/\r\n/g, "\n")
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "");
 
-  let match, wanted = "";
-  while ((match = re.exec(text)) !== null) {
-    const num = Number(match[2]);
-    const content = match[3].trim();
-    if (num === Number(n)) {
-      wanted = `<h5>Plusuri ${n}</h5>\n${content}`;
-      break;
-    }
+  let pattern = "";
+
+  // ✅ Alegem expresia corectă în funcție de tip
+  if (type.includes("interioara")) {
+    pattern = `(^|\\n)\\s*plusuri\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)\\s*plusuri\\s*\\d+\\b|$)`;
+  } else if (type.includes("exterioara")) {
+    pattern = `(^|\\n)\\s*luna\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)\\s*luna\\s*\\d+\\b|$)`;
+  } else if (type.includes("cosmica")) {
+    pattern = `(^|\\n)\\s*vibratia\\s*cosmica\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)\\s*vibratia\\s*cosmica\\s*\\d+\\b|$)`;
+  } else if (type.includes("generala") || type.includes("globala")) {
+    pattern = `(^|\\n)\\s*vibratia\\s*(generala|globala)\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)\\s*vibratia\\s*(generala|globala)\\s*\\d+\\b|$)`;
   }
 
-  return wanted;
+  const re = new RegExp(pattern, "i");
+  const match = re.exec(text);
+  if (!match) return "";
+
+  return match[0].trim();
 }
 // 🧩 Funcție care formatează frumos textul: titluri bold, linii noi, puncte pe rânduri separate
 function formatTextWithNewlines(text) {
