@@ -272,5 +272,7 @@ function formatTextWithNewlines(text) {
       .replace(/(Plusuri\s*\d*)/gi, "<br><strong>$1</strong>")
   .replace(/(Minusuri\s*\d*)/gi, "<br><strong>$1</strong>")
   .replace(/(Lucruri\s*Distructive)/gi, "<br><strong>$1</strong>");
-}   // ✅ aceasta trebuie adăugată
+}  
+} // <- aceasta închide fișierul complet
+
 
