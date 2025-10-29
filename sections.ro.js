@@ -179,6 +179,7 @@ Minusuri 8
 – tendința de a deveni autoritar, dominator.
 
 Vibrația 9
+
 Plusuri 9
 • cel care dăruiește, vindecă, iartă;
 • simbol al iubirii universale, al compasiunii și al artei;
@@ -360,30 +361,39 @@ va fi mult mai ușor să-i îndrumăm corect pe cei care vin la noi.  EXEMPLE:
  O persoană nascută in 1974, are vibrația cosmică 2. 7 + 4 = 11; 1 + 1 = 2
  In metafora cu lutul si vasul obținut, vibrația cosmică poate fi asociată cu unul din factorii importanți 
 care contribuie la definirea funției si locului unde va fi folosit acest vas de lut.
+
  Vibratie cosmica 1	
  - Spiritul Pionierului – sufletul care vine să aducă lumină și direcție în lume. Este o vibrație a inițiativei, a curajului și a individualității.	
  - Să învețe să conducă fără să domine. Să-și urmeze calea fără teama de singurătate.
+ 
 Vibratie cosmica 2	
  - Spiritul Diplomatului – sufletul care evoluează prin colaborare, pace și armonie. Este o vibrație sensibilă, receptivă și empatică.	
  - Să învețe răbdarea, echilibrul emoțional și puterea de a iubi necondiționat.
+ 
 Vibratie cosmica 3	
  - Spiritul Creatorului – sufletul artist, comunicator, menit să inspire prin cuvânt, culoare și vibrație.	
  - Să învețe să-și exprime adevărul interior cu bucurie, fără teamă de judecată.
+ 
 Vibratie cosmica 4	
  - Spiritul Constructorului – sufletul care aduce ordine și stabilitate în planul material.	
  - Să învețe disciplina, consecvența și încrederea în procesul vieții.
+ 
 Vibratie cosmica 5	
  - Spiritul Exploratorului – sufletul liber, căutător de sensuri, care evoluează prin experiențe și schimbare.	
  - Să învețe libertatea responsabilă și înțelepciunea prin diversitate.
+ 
 Vibratie cosmica 6	
  - Spiritul Vindecătorului – sufletul iubitor, protector, devotat familiei și armoniei universale.	
  - Să învețe să ofere iubire fără a se sacrifica.
+ 
 Vibratie cosmica 7	
  - Spiritul Misticului – sufletul care caută adevărul absolut, profunzimea și legătura cu Divinitatea.	
  - Să învețe încrederea în vocea divină interioară și să evite izolarea.
+ 
 Vibratie cosmica 8	
  - Spiritul Maestrului Puterii – sufletul care învață echilibrul dintre materie și spirit, între control și abandon.	
  - Să învețe să folosească puterea cu înțelepciune, pentru binele comun.
+ 
 Vibratie cosmica 9	
  - Spiritul Iluminatului – sufletul care se află la ultima treaptă a experienței umane, dornic să se dăruiască lumii.	
  - Să învețe să ierte, să elibereze și să iubească universal.`,
