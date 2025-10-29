@@ -70,7 +70,7 @@ Lucruri Distructive 3
 – lipsa umorului, lauda de sine, dorința de a te face auzit, “gură spartă”, gelozia, lipsa de răbdare, dualitate, supracriticism, inutilitate;
 – extravagant, cumpără mult dar nu-i trebuie;
 – un 3 ajunge foarte prefăcut, nu mai tinde către iubire și adevăr, ci către minciună și a se preface;
-– un “3” are tendința să înceapă foarte multe lucruri și să nu termine nimic.Vibrația 4
+– un “3” are tendința să înceapă foarte multe lucruri și să nu termine nimic.
 
 Plusuri 4
 • cel care dă formă și structură lumii materiale;
@@ -179,7 +179,6 @@ Minusuri 8
 – tendința de a deveni autoritar, dominator.
 
 Vibrația 9
-
 Plusuri 9
 • cel care dăruiește, vindecă, iartă;
 • simbol al iubirii universale, al compasiunii și al artei;
@@ -196,9 +195,9 @@ Minusuri 9
 – hipersensibilitate, instabilitate emoțională;
 – dezamăgiri, deziluzii, tendință de autosacrificiu;
 – dificultate în a pune limite, a spune „nu”;
-– poate deveni deziluzionat, dezorientat, obosit spiritual.Numărul Maestru 11
+– poate deveni deziluzionat, dezorientat, obosit spiritual.
 
-Plusuri 11
+Plusuri 11 Numărul Maestru 11
 • cel ce are o vibrație dublă a lui 1 – puterea și inițiativa ridicate la un nivel spiritual;
 • vizionar, inspirat, ghid pentru ceilalți;
 • canal între cer și pământ, între divin și uman;
@@ -283,7 +282,8 @@ Este legată de comportament, relaționare, reacție și atitudine.
 - Vibrația exterioară arată cum te văd ceilalți.  
 
 📖 **Scopul vibrației exterioare:**  
-să înveți să-ți manifești potențialul interior în plan social, prin acțiune, comunicare și relații. 1. Luna 1 / 10 – Vibrația Exterioară 1
+să înveți să-ți manifești potențialul interior în plan social, prin acțiune, comunicare și relații. 
+1. Luna 1 / 10 – Vibrația Exterioară 1
 – Ești perceput ca o persoană independentă, curajoasă, activă.
 – Atragi atenția prin forță, ambiție și determinare.
 – Ai spirit de lider, dar ai grijă să nu devii autoritar.
@@ -360,24 +360,33 @@ va fi mult mai ușor să-i îndrumăm corect pe cei care vin la noi.  EXEMPLE:
  O persoană nascută in 1974, are vibrația cosmică 2. 7 + 4 = 11; 1 + 1 = 2
  In metafora cu lutul si vasul obținut, vibrația cosmică poate fi asociată cu unul din factorii importanți 
 care contribuie la definirea funției si locului unde va fi folosit acest vas de lut.
- 1	Spiritul Pionierului – sufletul care vine să aducă lumină și direcție în lume. Este o vibrație a inițiativei, a curajului și a individualității.	
-Să învețe să conducă fără să domine. Să-și urmeze calea fără teama de singurătate.
-2	Spiritul Diplomatului – sufletul care evoluează prin colaborare, pace și armonie. Este o vibrație sensibilă, receptivă și empatică.	
-Să învețe răbdarea, echilibrul emoțional și puterea de a iubi necondiționat.
-3	Spiritul Creatorului – sufletul artist, comunicator, menit să inspire prin cuvânt, culoare și vibrație.	
-Să învețe să-și exprime adevărul interior cu bucurie, fără teamă de judecată.
-4	Spiritul Constructorului – sufletul care aduce ordine și stabilitate în planul material.	
-Să învețe disciplina, consecvența și încrederea în procesul vieții.
-5	Spiritul Exploratorului – sufletul liber, căutător de sensuri, care evoluează prin experiențe și schimbare.	
-Să învețe libertatea responsabilă și înțelepciunea prin diversitate.
-6	Spiritul Vindecătorului – sufletul iubitor, protector, devotat familiei și armoniei universale.	
-Să învețe să ofere iubire fără a se sacrifica.
-7	Spiritul Misticului – sufletul care caută adevărul absolut, profunzimea și legătura cu Divinitatea.	
-Să învețe încrederea în vocea divină interioară și să evite izolarea.
-8	Spiritul Maestrului Puterii – sufletul care învață echilibrul dintre materie și spirit, între control și abandon.	
-Să învețe să folosească puterea cu înțelepciune, pentru binele comun.
-9	Spiritul Iluminatului – sufletul care se află la ultima treaptă a experienței umane, dornic să se dăruiască lumii.	
-Să învețe să ierte, să elibereze și să iubească universal.`,
+ Vibratie cosmica 1	
+ - Spiritul Pionierului – sufletul care vine să aducă lumină și direcție în lume. Este o vibrație a inițiativei, a curajului și a individualității.	
+ - Să învețe să conducă fără să domine. Să-și urmeze calea fără teama de singurătate.
+Vibratie cosmica 2	
+ - Spiritul Diplomatului – sufletul care evoluează prin colaborare, pace și armonie. Este o vibrație sensibilă, receptivă și empatică.	
+ - Să învețe răbdarea, echilibrul emoțional și puterea de a iubi necondiționat.
+Vibratie cosmica 3	
+ - Spiritul Creatorului – sufletul artist, comunicator, menit să inspire prin cuvânt, culoare și vibrație.	
+ - Să învețe să-și exprime adevărul interior cu bucurie, fără teamă de judecată.
+Vibratie cosmica 4	
+ - Spiritul Constructorului – sufletul care aduce ordine și stabilitate în planul material.	
+ - Să învețe disciplina, consecvența și încrederea în procesul vieții.
+Vibratie cosmica 5	
+ - Spiritul Exploratorului – sufletul liber, căutător de sensuri, care evoluează prin experiențe și schimbare.	
+ - Să învețe libertatea responsabilă și înțelepciunea prin diversitate.
+Vibratie cosmica 6	
+ - Spiritul Vindecătorului – sufletul iubitor, protector, devotat familiei și armoniei universale.	
+ - Să învețe să ofere iubire fără a se sacrifica.
+Vibratie cosmica 7	
+ - Spiritul Misticului – sufletul care caută adevărul absolut, profunzimea și legătura cu Divinitatea.	
+ - Să învețe încrederea în vocea divină interioară și să evite izolarea.
+Vibratie cosmica 8	
+ - Spiritul Maestrului Puterii – sufletul care învață echilibrul dintre materie și spirit, între control și abandon.	
+ - Să învețe să folosească puterea cu înțelepciune, pentru binele comun.
+Vibratie cosmica 9	
+ - Spiritul Iluminatului – sufletul care se află la ultima treaptă a experienței umane, dornic să se dăruiască lumii.	
+ - Să învețe să ierte, să elibereze și să iubească universal.`,
   //
 "Gradul de evolutie": ` 
  Mod de calcul: (Vibratia interioara + Vibratia Exterioara + Vibratia Cosmica)
@@ -401,15 +410,96 @@ afirmare (în raport cu sine și în raport cu ceilalți)-care sunt contextele f
  care sunt contextele optime care îl așază pe om pe linia vocației sale (Vibrația destinului) .
  Prin contexte optime înțelegându-se nu numai experiențele pozitive, ci și cele negative, care îi pot servi omului ca lecții de viață, prin care își descoperă varianta mai bună de sine.
 Vibratia Globala ne arata Obiectivul omului in viata 
- 1.Preluarea conducerii!
-2.Crearea de legaturi intre oameni! A fii partenerul ideal!
-3.Manifestarea creativitatii!
-4.Realizari practice!
-5.Libertatea si Non-conformismul!
-6.Acceptarea responsabilitatilor si crearea armoniei!
-7.Intelepciunea si cunoasterea de sine!
-8.Succesul material si manifestarea corecta a puterii!
-9.Exprimarea iubirii universale! Transformarea! `,
+ Vibratia globala 1- preluarea conducerii!
+  - Ziua + luna nașterii. Dezvăluie comportamentul general și motivațiile omului, așa cum este el în integralitatea sa, 
+armonizând vibrația interioară (fără mască) cu cea socială (cu mască).-Oferă suportul necesar depășirii provocărilor și obstacolelor în viață.-Oferă informațiile despre motivațiile omului, despre ce îl stimulează să dea cel mai bun randament, 
+interesul lui real-Este un instrument util în dinamica între doi colegi, parteneri sau în grup.
+  - Cunoscând vibrația globală a omului său, cei care doresc să contribuie la creșterea acestuia sau să îl ajute, vor știi:-care sunt situațiile care îi creează omului avantaje pentru sau dificultăți în exprimare, manifestare și 
+afirmare (în raport cu sine și în raport cu ceilalți)-care sunt contextele favorabile procesului de învățare și de creștere și evoluție, cât și zonele de interes 
+(doar un exemplu - științe exacte sau științe umaniste) care sunt contextele optime care îl așază pe om pe linia vocației sale (Vibrația destinului) .
+  - Prin contexte optime înțelegându-se nu numai experiențele pozitive, ci și cele negative, care îi pot servi omului ca lecții de viață, prin care își descoperă varianta mai bună de sine.
+  - Vibratia Globala ne arata Obiectivul omului in viata 
+  
+Vibratia globala 2 - crearea de legaturi intre oameni! A fii partenerul ideal!
+- Ziua + luna nașterii. Dezvăluie comportamentul general și motivațiile omului, așa cum este el în integralitatea sa, 
+armonizând vibrația interioară (fără mască) cu cea socială (cu mască).-Oferă suportul necesar depășirii provocărilor și obstacolelor în viață.-Oferă informațiile despre motivațiile omului, despre ce îl stimulează să dea cel mai bun randament, 
+interesul lui real-Este un instrument util în dinamica între doi colegi, parteneri sau în grup.
+  - Cunoscând vibrația globală a omului său, cei care doresc să contribuie la creșterea acestuia sau să îl ajute, vor știi:-care sunt situațiile care îi creează omului avantaje pentru sau dificultăți în exprimare, manifestare și 
+afirmare (în raport cu sine și în raport cu ceilalți)-care sunt contextele favorabile procesului de învățare și de creștere și evoluție, cât și zonele de interes 
+(doar un exemplu - științe exacte sau științe umaniste) care sunt contextele optime care îl așază pe om pe linia vocației sale (Vibrația destinului) .
+  - Prin contexte optime înțelegându-se nu numai experiențele pozitive, ci și cele negative, care îi pot servi omului ca lecții de viață, prin care își descoperă varianta mai bună de sine.
+  - Vibratia Globala ne arata Obiectivul omului in viata 
+  
+Vibratia globala 3 - Manifestarea creativitatii!
+- Ziua + luna nașterii. Dezvăluie comportamentul general și motivațiile omului, așa cum este el în integralitatea sa, 
+armonizând vibrația interioară (fără mască) cu cea socială (cu mască).-Oferă suportul necesar depășirii provocărilor și obstacolelor în viață.-Oferă informațiile despre motivațiile omului, despre ce îl stimulează să dea cel mai bun randament, 
+interesul lui real-Este un instrument util în dinamica între doi colegi, parteneri sau în grup.
+  - Cunoscând vibrația globală a omului său, cei care doresc să contribuie la creșterea acestuia sau să îl ajute, vor știi:-care sunt situațiile care îi creează omului avantaje pentru sau dificultăți în exprimare, manifestare și 
+afirmare (în raport cu sine și în raport cu ceilalți)-care sunt contextele favorabile procesului de învățare și de creștere și evoluție, cât și zonele de interes 
+(doar un exemplu - științe exacte sau științe umaniste) care sunt contextele optime care îl așază pe om pe linia vocației sale (Vibrația destinului) .
+  - Prin contexte optime înțelegându-se nu numai experiențele pozitive, ci și cele negative, care îi pot servi omului ca lecții de viață, prin care își descoperă varianta mai bună de sine.
+  - Vibratia Globala ne arata Obiectivul omului in viata 
+  
+Vibratia globala 4 - Realizari practice!
+- Ziua + luna nașterii. Dezvăluie comportamentul general și motivațiile omului, așa cum este el în integralitatea sa, 
+armonizând vibrația interioară (fără mască) cu cea socială (cu mască).-Oferă suportul necesar depășirii provocărilor și obstacolelor în viață.-Oferă informațiile despre motivațiile omului, despre ce îl stimulează să dea cel mai bun randament, 
+interesul lui real-Este un instrument util în dinamica între doi colegi, parteneri sau în grup.
+  - Cunoscând vibrația globală a omului său, cei care doresc să contribuie la creșterea acestuia sau să îl ajute, vor știi:-care sunt situațiile care îi creează omului avantaje pentru sau dificultăți în exprimare, manifestare și 
+afirmare (în raport cu sine și în raport cu ceilalți)-care sunt contextele favorabile procesului de învățare și de creștere și evoluție, cât și zonele de interes 
+(doar un exemplu - științe exacte sau științe umaniste) care sunt contextele optime care îl așază pe om pe linia vocației sale (Vibrația destinului) .
+  - Prin contexte optime înțelegându-se nu numai experiențele pozitive, ci și cele negative, care îi pot servi omului ca lecții de viață, prin care își descoperă varianta mai bună de sine.
+  - Vibratia Globala ne arata Obiectivul omului in viata 
+  
+Vibratia globala 5 - Libertatea si Non-conformismul!
+- Ziua + luna nașterii. Dezvăluie comportamentul general și motivațiile omului, așa cum este el în integralitatea sa, 
+armonizând vibrația interioară (fără mască) cu cea socială (cu mască).-Oferă suportul necesar depășirii provocărilor și obstacolelor în viață.-Oferă informațiile despre motivațiile omului, despre ce îl stimulează să dea cel mai bun randament, 
+interesul lui real-Este un instrument util în dinamica între doi colegi, parteneri sau în grup.
+  - Cunoscând vibrația globală a omului său, cei care doresc să contribuie la creșterea acestuia sau să îl ajute, vor știi:-care sunt situațiile care îi creează omului avantaje pentru sau dificultăți în exprimare, manifestare și 
+afirmare (în raport cu sine și în raport cu ceilalți)-care sunt contextele favorabile procesului de învățare și de creștere și evoluție, cât și zonele de interes 
+(doar un exemplu - științe exacte sau științe umaniste) care sunt contextele optime care îl așază pe om pe linia vocației sale (Vibrația destinului) .
+  - Prin contexte optime înțelegându-se nu numai experiențele pozitive, ci și cele negative, care îi pot servi omului ca lecții de viață, prin care își descoperă varianta mai bună de sine.
+  - Vibratia Globala ne arata Obiectivul omului in viata 
+  
+Vibratia globala 6 - Acceptarea responsabilitatilor si crearea armoniei!
+- Ziua + luna nașterii. Dezvăluie comportamentul general și motivațiile omului, așa cum este el în integralitatea sa, 
+armonizând vibrația interioară (fără mască) cu cea socială (cu mască).-Oferă suportul necesar depășirii provocărilor și obstacolelor în viață.-Oferă informațiile despre motivațiile omului, despre ce îl stimulează să dea cel mai bun randament, 
+interesul lui real-Este un instrument util în dinamica între doi colegi, parteneri sau în grup.
+  - Cunoscând vibrația globală a omului său, cei care doresc să contribuie la creșterea acestuia sau să îl ajute, vor știi:-care sunt situațiile care îi creează omului avantaje pentru sau dificultăți în exprimare, manifestare și 
+afirmare (în raport cu sine și în raport cu ceilalți)-care sunt contextele favorabile procesului de învățare și de creștere și evoluție, cât și zonele de interes 
+(doar un exemplu - științe exacte sau științe umaniste) care sunt contextele optime care îl așază pe om pe linia vocației sale (Vibrația destinului) .
+  - Prin contexte optime înțelegându-se nu numai experiențele pozitive, ci și cele negative, care îi pot servi omului ca lecții de viață, prin care își descoperă varianta mai bună de sine.
+  - Vibratia Globala ne arata Obiectivul omului in viata 
+  
+Vibratia globala 7 - Intelepciunea si cunoasterea de sine!
+- Ziua + luna nașterii. Dezvăluie comportamentul general și motivațiile omului, așa cum este el în integralitatea sa, 
+armonizând vibrația interioară (fără mască) cu cea socială (cu mască).-Oferă suportul necesar depășirii provocărilor și obstacolelor în viață.-Oferă informațiile despre motivațiile omului, despre ce îl stimulează să dea cel mai bun randament, 
+interesul lui real-Este un instrument util în dinamica între doi colegi, parteneri sau în grup.
+  - Cunoscând vibrația globală a omului său, cei care doresc să contribuie la creșterea acestuia sau să îl ajute, vor știi:-care sunt situațiile care îi creează omului avantaje pentru sau dificultăți în exprimare, manifestare și 
+afirmare (în raport cu sine și în raport cu ceilalți)-care sunt contextele favorabile procesului de învățare și de creștere și evoluție, cât și zonele de interes 
+(doar un exemplu - științe exacte sau științe umaniste) care sunt contextele optime care îl așază pe om pe linia vocației sale (Vibrația destinului) .
+  - Prin contexte optime înțelegându-se nu numai experiențele pozitive, ci și cele negative, care îi pot servi omului ca lecții de viață, prin care își descoperă varianta mai bună de sine.
+  - Vibratia Globala ne arata Obiectivul omului in viata 
+  
+Vibratia globala 8 - Succesul material si manifestarea corecta a puterii!
+- Ziua + luna nașterii. Dezvăluie comportamentul general și motivațiile omului, așa cum este el în integralitatea sa, 
+armonizând vibrația interioară (fără mască) cu cea socială (cu mască).-Oferă suportul necesar depășirii provocărilor și obstacolelor în viață.-Oferă informațiile despre motivațiile omului, despre ce îl stimulează să dea cel mai bun randament, 
+interesul lui real-Este un instrument util în dinamica între doi colegi, parteneri sau în grup.
+  - Cunoscând vibrația globală a omului său, cei care doresc să contribuie la creșterea acestuia sau să îl ajute, vor știi:-care sunt situațiile care îi creează omului avantaje pentru sau dificultăți în exprimare, manifestare și 
+afirmare (în raport cu sine și în raport cu ceilalți)-care sunt contextele favorabile procesului de învățare și de creștere și evoluție, cât și zonele de interes 
+(doar un exemplu - științe exacte sau științe umaniste) care sunt contextele optime care îl așază pe om pe linia vocației sale (Vibrația destinului) .
+  - Prin contexte optime înțelegându-se nu numai experiențele pozitive, ci și cele negative, care îi pot servi omului ca lecții de viață, prin care își descoperă varianta mai bună de sine.
+  - Vibratia Globala ne arata Obiectivul omului in viata 
+  
+Vibratia globala 9 - Exprimarea iubirii universale! Transformarea!
+- Ziua + luna nașterii. Dezvăluie comportamentul general și motivațiile omului, așa cum este el în integralitatea sa, 
+armonizând vibrația interioară (fără mască) cu cea socială (cu mască).-Oferă suportul necesar depășirii provocărilor și obstacolelor în viață.-Oferă informațiile despre motivațiile omului, despre ce îl stimulează să dea cel mai bun randament, 
+interesul lui real-Este un instrument util în dinamica între doi colegi, parteneri sau în grup.
+  - Cunoscând vibrația globală a omului său, cei care doresc să contribuie la creșterea acestuia sau să îl ajute, vor știi:-care sunt situațiile care îi creează omului avantaje pentru sau dificultăți în exprimare, manifestare și 
+afirmare (în raport cu sine și în raport cu ceilalți)-care sunt contextele favorabile procesului de învățare și de creștere și evoluție, cât și zonele de interes 
+(doar un exemplu - științe exacte sau științe umaniste) care sunt contextele optime care îl așază pe om pe linia vocației sale (Vibrația destinului) .
+  - Prin contexte optime înțelegându-se nu numai experiențele pozitive, ci și cele negative, care îi pot servi omului ca lecții de viață, prin care își descoperă varianta mai bună de sine.
+  - Vibratia Globala ne arata Obiectivul omului in viata 
+  `,
 //
 "Calea destinului": `
 ✴️ **VIBRAȚIA CĂII DESTINULUI**
