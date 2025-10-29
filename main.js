@@ -226,6 +226,7 @@ function renderSections() {
 function extractVibrationBlock(fullText, n, type = "interioara") {
   if (!fullText) return "";
 
+  // normalizare text pentru potrivire robustă
   const text = fullText
     .toString()
     .replace(/\r\n/g, "\n")
@@ -236,28 +237,19 @@ function extractVibrationBlock(fullText, n, type = "interioara") {
   let pattern = "";
 
   if (type.includes("interioara")) {
+    // plusuri / minusuri
     pattern = `(^|\\n)\\s*plusuri\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)\\s*plusuri\\s*\\d+\\b|$)`;
   } 
   else if (type.includes("exterioara")) {
-    // ex: "2. Luna 2 / 11 – Vibratia Exterioara 2"
-    pattern = `(^|\\n).*vibratia?\\s*exterioara\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n).*vibratia?\\s*exterioara\\s*\\d+\\b|$)`;
+    // Ex: "2. Luna 2 / 11 – Vibratia Exterioara 2"
+    pattern = `(^|\\n).*vibrati[ae]?\\s*exterioar[ae]?\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n).*vibrati[ae]?\\s*exterioar[ae]?\\s*\\d+\\b|$)`;
   } 
   else if (type.includes("cosmica")) {
-    // ex: "Vibratie cosmica 6"
-    pattern = `(^|\\n)\\s*vibratia?\\s*cosmica\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)\\s*vibratia?\\s*cosmica\\s*\\d+\\b|$)`;
+    // Ex: "Vibratie cosmica 6"
+    pattern = `(^|\\n).*vibrati[ae]?\\s*cosmic[ae]?\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n).*vibrati[ae]?\\s*cosmic[ae]?\\s*\\d+\\b|$)`;
   } 
   else if (type.includes("generala") || type.includes("globala")) {
-    // ex: "Vibratie globala 3"
-    pattern = `(^|\\n)\\s*vibratia?\\s*(generala|globala)\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)\\s*vibratia?\\s*(generala|globala)\\s*\\d+\\b|$)`;
-  }
-
-  const re = new RegExp(pattern, "i");
-  const match = re.exec(text);
-
-  if (!match) {
-    console.warn(`❌ Nu s-a găsit bloc pentru ${type} ${n}`);
-    return "";
-  }
+    // Ex: "Vibratie globala 4" sau "Vibra
 
   console.log(`✅ Găsit bloc ${type} ${n}:`, match[0].slice(0, 100));
   return match[0].trim();
