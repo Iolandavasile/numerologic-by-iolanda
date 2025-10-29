@@ -160,26 +160,20 @@ function renderSections() {
     body.className = "body";
     body.style.display = "none";
 
-    // --- pentru Vibrația interioară afișăm DOAR vibrația VI ---
-    const keyNoDiacritics = k.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
-    const isVIButton = keyNoDiacritics.includes("vibratia interioara");
-
-    if (isVIButton) {
-      const full = (SECTIONS["Vibratia interioara"] ?? SECTIONS["Vibrația interioară"] ?? "").toString();
-      const vi = Number(window.lastVI || 0);
-      const extracted = extractVibrationBlock(full, vi);
+    // ✅ dacă e vibrația interioară, afișăm doar textul pentru VI calculată
+    if (k.toLowerCase().includes("interioară") || k.toLowerCase().includes("interioara")) {
+      const vi = window.lastVI || "?";
+      const extracted = extractVibrationBlock(SECTIONS[k], vi);
       body.innerHTML = extracted
-        ? `<h4>Vibrația interioară (${vi})</h4>${extracted}`
+        ? `<h4>Vibrația interioară (${vi})</h4>${formatTextWithNewlines(extracted)}`
         : `<h4>Vibrația interioară (${vi})</h4><p>Nu există interpretare pentru vibrația ${vi}.</p>`;
     } else {
-      // restul secțiunilor rămân neschimbate
+      // pentru restul secțiunilor – textul complet
       body.innerHTML = SECTIONS[k];
     }
 
     btn.onclick = () => {
-      const visible = body.style.display === "block";
-      document.querySelectorAll(".section .body").forEach(b => (b.style.display = "none"));
-      body.style.display = visible ? "none" : "block";
+      body.style.display = body.style.display === "none" ? "block" : "none";
     };
 
     div.appendChild(btn);
