@@ -230,19 +230,26 @@ function extractVibrationBlock(fullText, n, type = "interioara") {
     .toString()
     .replace(/\r\n/g, "\n")
     .normalize("NFD")
-    .replace(/\p{Diacritic}/gu, "");
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase();
 
   let pattern = "";
 
-  // ✅ Alegem expresia corectă în funcție de tip
+  // ✅ Alegem expresia corectă în funcție de tipul de vibrație
   if (type.includes("interioara")) {
     pattern = `(^|\\n)\\s*plusuri\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)\\s*plusuri\\s*\\d+\\b|$)`;
-  } else if (type.includes("exterioara")) {
-    pattern = `(^|\\n)\\s*luna\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)\\s*luna\\s*\\d+\\b|$)`;
-  } else if (type.includes("cosmica")) {
-    pattern = `(^|\\n)\\s*vibratia\\s*cosmica\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)\\s*vibratia\\s*cosmica\\s*\\d+\\b|$)`;
-  } else if (type.includes("generala") || type.includes("globala")) {
-    pattern = `(^|\\n)\\s*vibratia\\s*(generala|globala)\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)\\s*vibratia\\s*(generala|globala)\\s*\\d+\\b|$)`;
+  } 
+  else if (type.includes("exterioara")) {
+    // Ex: "1. Luna 1 / 10 – Vibratia Exterioara 1"
+    pattern = `(^|\\n).*vibratia\\s*exterioara\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n).*vibratia\\s*exterioara\\s*\\d+\\b|$)`;
+  } 
+  else if (type.includes("cosmica")) {
+    // Ex: "Vibratie cosmica 1"
+    pattern = `(^|\\n).*vibratia?\\s*cosmica\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n).*vibratia?\\s*cosmica\\s*\\d+\\b|$)`;
+  } 
+  else if (type.includes("generala") || type.includes("globala")) {
+    // Ex: "Vibratia globala 1"
+    pattern = `(^|\\n).*vibratia?\\s*(generala|globala)\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n).*vibratia?\\s*(generala|globala)\\s*\\d+\\b|$)`;
   }
 
   const re = new RegExp(pattern, "i");
