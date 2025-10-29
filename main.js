@@ -52,8 +52,11 @@ function calculate() {
  const VI = reduceKeep(sumDigits(d));
   window.lastVI = VI;
   const VE  = reduceKeep(sumDigits(m));
+  window.lastVI = VI;
   const VC  = reduceKeep(sumDigits(Number(String(y).slice(-2))));
+  window.lastVI = VI;
   const VG  = reduceKeep(sumDigits(d) + sumDigits(m));
+  window.lastVI = VI;
   const VCD = sum;
   const VD  = sumDigits(sum);
 
@@ -160,18 +163,53 @@ function renderSections() {
     body.className = "body";
     body.style.display = "none";
 
-    // ✅ dacă e vibrația interioară, afișăm doar textul pentru VI calculată
-    if (k.toLowerCase().includes("interioară") || k.toLowerCase().includes("interioara")) {
+    // === FILTRARE INTELIGENTĂ pentru fiecare tip de vibrație ===
+    const keyLower = k.toLowerCase();
+    let extracted = "";
+    let label = "";
+
+    if (keyLower.includes("interioară") || keyLower.includes("interioara")) {
+      label = "Vibrația interioară";
       const vi = window.lastVI || "?";
-      const extracted = extractVibrationBlock(SECTIONS[k], vi);
+      extracted = extractVibrationBlock(SECTIONS[k], vi);
       body.innerHTML = extracted
-        ? `<h4>Vibrația interioară (${vi})</h4>${formatTextWithNewlines(extracted)}`
-        : `<h4>Vibrația interioară (${vi})</h4><p>Nu există interpretare pentru vibrația ${vi}.</p>`;
-    } else {
-      // pentru restul secțiunilor – textul complet
+        ? `<h4>${label} (${vi})</h4>${formatTextWithNewlines(extracted)}`
+        : `<h4>${label} (${vi})</h4><p>Nu există interpretare pentru vibrația ${vi}.</p>`;
+    }
+
+    else if (keyLower.includes("exterioară") || keyLower.includes("exterioara")) {
+      label = "Vibrația exterioară";
+      const ve = window.lastVE || "?";
+      extracted = extractVibrationBlock(SECTIONS[k], ve);
+      body.innerHTML = extracted
+        ? `<h4>${label} (${ve})</h4>${formatTextWithNewlines(extracted)}`
+        : `<h4>${label} (${ve})</h4><p>Nu există interpretare pentru vibrația ${ve}.</p>`;
+    }
+
+    else if (keyLower.includes("cosmică") || keyLower.includes("cosmica")) {
+      label = "Vibrația cosmică";
+      const vc = window.lastVC || "?";
+      extracted = extractVibrationBlock(SECTIONS[k], vc);
+      body.innerHTML = extracted
+        ? `<h4>${label} (${vc})</h4>${formatTextWithNewlines(extracted)}`
+        : `<h4>${label} (${vc})</h4><p>Nu există interpretare pentru vibrația ${vc}.</p>`;
+    }
+
+    else if (keyLower.includes("generală") || keyLower.includes("generala")) {
+      label = "Vibrația generală";
+      const vg = window.lastVG || "?";
+      extracted = extractVibrationBlock(SECTIONS[k], vg);
+      body.innerHTML = extracted
+        ? `<h4>${label} (${vg})</h4>${formatTextWithNewlines(extracted)}`
+        : `<h4>${label} (${vg})</h4><p>Nu există interpretare pentru vibrația ${vg}.</p>`;
+    }
+
+    else {
+      // alte secțiuni (rămân complete)
       body.innerHTML = SECTIONS[k];
     }
 
+    // ✅ face butonul clicabil pentru a afișa / ascunde conținutul
     btn.onclick = () => {
       body.style.display = body.style.display === "none" ? "block" : "none";
     };
