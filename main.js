@@ -205,4 +205,22 @@ function extractVibrationBlock(fullText, n) {
 
   return wanted;
 }
+// 🧩 Funcție care formatează frumos textul: titluri bold, linii noi, puncte pe rânduri separate
+function formatTextWithNewlines(text) {
+  if (!text) return "";
+
+  return text
+    // Normalizează liniile
+    .replace(/\r\n/g, "\n")
+    // Pune <br> înainte de fiecare punct (• sau –)
+    .replace(/\n\s*[-•]\s*/g, "<br>• ")
+    // Păstrează paragrafele duble
+    .replace(/\n{2,}/g, "<br><br>")
+    // Restul liniilor
+    .replace(/\n/g, "<br>")
+    // Titluri bold (Plusuri, Minusuri, Lucruri distructive)
+    .replace(/(Plusuri\s*\d*)/gi, "<br><strong>$1</strong>")
+    .replace(/(Minusuri\s*\d*)/gi, "<br><strong>$1</strong>")
+    .replace(/(Lucruri\s*Distructive)/gi, "<br><strong>$1</strong>");
+}
 
