@@ -269,8 +269,8 @@ function formatTextWithNewlines(text) {
     // Restul liniilor
     .replace(/\n/g, "<br>")
     // Titluri bold (Plusuri, Minusuri, Lucruri distructive)
-    .replace(/(Plusuri\s*\d*)/gi, "<br><strong>$1</strong>")
-    .replace(/(Minusuri\s*\d*)/gi, "<br><strong>$1</strong>")
-    .replace(/(Lucruri\s*Distructive)/gi, "<br><strong>$1</strong>");
-}
+      .replace(/(Plusuri\s*\d*)/gi, "<br><strong>$1</strong>")
+  .replace(/(Minusuri\s*\d*)/gi, "<br><strong>$1</strong>")
+  .replace(/(Lucruri\s*Distructive)/gi, "<br><strong>$1</strong>");
+}   // ✅ aceasta trebuie adăugată
 
