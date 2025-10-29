@@ -355,10 +355,7 @@ omului pe pământ, pentru care este creat, menirea lui, felul lui de a contribu
  Aceasta cifra reprezintă “LEGISLATIVUL” - Aici se alcătuiesc legi, roluri și scenarii cu care “executivul” din 
 interiorul omului nu este mereu de acord (V.ext).
 Cunoscând vibrația cosmică, atunci când vom învăța despre partea ezoterică a destinului unui om, ne 
-va fi mult mai ușor să-i îndrumăm corect pe cei care vin la noi.  EXEMPLE:
- O persoană nascută in 1980, are vibrația cosmică 8. 8 + 0 = 8
- O persoană nascută in 1999, are vibrația cosmică 9. 9 + 9 = 18; 1 + 8 = 9
- O persoană nascută in 1974, are vibrația cosmică 2. 7 + 4 = 11; 1 + 1 = 2
+va fi mult mai ușor să-i îndrumăm corect pe cei care vin la noi.  
  In metafora cu lutul si vasul obținut, vibrația cosmică poate fi asociată cu unul din factorii importanți 
 care contribuie la definirea funției si locului unde va fi folosit acest vas de lut.
 
