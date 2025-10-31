@@ -297,9 +297,9 @@ function formatTextWithNewlines(text) {
     // Titluri bold (Plusuri, Minusuri, Lucruri distructive)
       .replace(/(Plusuri\s*\d*)/gi, "<br><strong>$1</strong>")
   .replace(/(Minusuri\s*\d*)/gi, "<br><strong>$1</strong>")
- .replace(/(Lucruri\s*Distructive)/gi, "<br><strong>$1</strong>");
-} // 🔥 adaugă această acoladă
-} // ✅ aceasta închide fișierul complet 
+   .replace(/(Lucruri\s*Distructive)/gi, "<br><strong>$1</strong>");
+} // 🔥 aceasta închide funcția formatTextWithNewlines
+
 
 
 
