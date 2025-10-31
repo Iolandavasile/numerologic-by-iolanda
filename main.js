@@ -270,8 +270,8 @@ else if (type.includes("generala") || type.includes("globala")) {
   console.log(match[0].slice(0, 300)); // afișează primele 300 caractere din ce s-a prins
 
   return match[0].trim();
-}
-
+} // ← închide else if
+} // ← închide funcția extractVibrationBlock
 
 // 🧩 Funcție care formatează frumos textul: titluri bold, linii noi, puncte pe rânduri separate
 function formatTextWithNewlines(text) {
