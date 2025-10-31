@@ -19,13 +19,10 @@ function calculate() {
 
   document.getElementById("results").classList.remove("hidden");
 
-  // --- Data de naștere ---
   const [year, month, day] = dob.split("-");
   const d = +day, m = +month, y = +year;
 
   const digits = `${d}${m}${y}`.split("").map(Number);
-
-  // --- OP1–OP4 ---
   const sum = digits.reduce((a, b) => a + b, 0);
   const op1 = sum;
   const op2 = sumDigits(op1);
@@ -40,24 +37,21 @@ function calculate() {
   const codPersonal = `${dStr}${mStr}${yStr}${op1}${op2}${op3}${op4}`;
   const codPersonalAfisat = `${dStr} ${mStr} ${yStr} ${op1} ${op2} ${op3} ${op4}`;
 
-  let box = document.getElementById("personal-code");
+  const box = document.getElementById("personal-code");
   if (box) box.textContent = `Cod personal: ${codPersonalAfisat}`;
 
-  // --- Vibrații ---
+  // Vibrații
   const VI = reduceKeep(sumDigits(d));
-  window.lastVI = VI;
-
   const VE = reduceKeep(sumDigits(m));
-  window.lastVE = VE;
-
   const VC = reduceKeep(sumDigits(Number(String(y).slice(-2))));
-  window.lastVC = VC;
-
   const VG = reduceKeep(sumDigits(d) + sumDigits(m));
-  window.lastVG = VG;
-
   const VCD = sum;
   const VD = sumDigits(sum);
+
+  window.lastVI = VI;
+  window.lastVE = VE;
+  window.lastVC = VC;
+  window.lastVG = VG;
 
   const codes = [
     `VI: ${VI}`,
@@ -77,7 +71,7 @@ function calculate() {
   renderSections();
 }
 
-// ===== Helperi =====
+// ===== HELPERI =====
 function sumDigits(n) {
   return String(n).split("").map(Number).reduce((a, b) => a + b, 0);
 }
@@ -114,7 +108,7 @@ function renderMatrix(id, digits) {
   document.getElementById(id).innerHTML = html;
 }
 
-// ===== Alte calcule =====
+// ===== NUMERE DIN NUME =====
 function renderNameNumbers(name) {
   const vals = name.toUpperCase().split("").map(charVal).filter(Boolean);
   const total = vals.reduce((a, b) => a + b, 0);
@@ -136,7 +130,7 @@ function renderNameNumbers(name) {
     data.map(d => `<div>${d}</div>`).join("");
 }
 
-// ===== SECTIUNI =====
+// ===== RENDER SECTIONS =====
 function renderSections() {
   const container = document.getElementById("sections");
   container.innerHTML = "";
@@ -177,9 +171,21 @@ function renderSections() {
       extracted = extractVibrationBlock(SECTIONS[k], vg, "globala");
     }
 
-    body.innerHTML = extracted
-      ? `<h4>${label}</h4>${formatTextWithNewlines(extracted)}`
-      : `<h4>${label}</h4><p>Nu există interpretare pentru această vibrație.</p>`;
+    // ✅ Afișare inteligentă pentru toate cazurile
+    if (extracted) {
+      body.innerHTML = `<h4>${label}</h4>${formatTextWithNewlines(extracted)}`;
+    } else if (
+      !keyLower.includes("interioara") &&
+      !keyLower.includes("exterioara") &&
+      !keyLower.includes("cosmica") &&
+      !keyLower.includes("globala") &&
+      !keyLower.includes("generala")
+    ) {
+      // Alte secțiuni — afișează textul complet
+      body.innerHTML = `<h4>${k}</h4>${formatTextWithNewlines(SECTIONS[k])}`;
+    } else {
+      body.innerHTML = `<h4>${label}</h4><p>Nu există interpretare pentru această vibrație.</p>`;
+    }
 
     btn.onclick = () => {
       body.style.display = body.style.display === "none" ? "block" : "none";
@@ -219,7 +225,7 @@ function extractVibrationBlock(fullText, n, type = "interioara") {
   return match ? match[0].trim() : "";
 }
 
-// ===== FORMATARE TEXT =====
+// ===== FORMAT TEXT =====
 function formatTextWithNewlines(text) {
   if (!text) return "";
 
