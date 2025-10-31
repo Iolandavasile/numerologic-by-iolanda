@@ -256,9 +256,9 @@ function extractVibrationBlock(fullText, n, type = "interioara") {
     pattern = `(^|\\n)[\\s\\S]*?vibrati[ae]?\\s*exterioar[ae]?\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)[\\s\\S]*?vibrati[ae]?\\s*exterioar[ae]?\\s*\\d+\\b|$)`;
   }
   // VC: "vibratie cosmica 6" până la următoarea „vibratie cosmica X”
-  else if (type.includes("cosmica")) {
-    pattern = `(^|\\n)[\\s\\S]*?vibrati[ae]?\\s*cosmic[ae]?\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)[\\s\\S]*?vibrati[ae]?\\s*cosmic[ae]?\\s*\\d+\\b|$)`;
-  }
+else if (type.includes("cosmica")) {
+  pattern = `(^|\\n)\\s*vibrati[ae]?\\s*cosmic[ae]?\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)\\s*vibrati[ae]?\\s*cosmic[ae]?\\s*\\d+\\b|$)`;
+}
  // VG (globală/generala): "vibratia globala 4 - ..." sau "vibratia generala 4 ..."
 else if (type.includes("generala") || type.includes("globala")) {
   pattern = `(^|\\n)\\s*vibrati[ae]?\\s*(globala|generala)\\s*${n}\\s*[-–—:]?[\\s\\S]*?(?=(?:^|\\n)\\s*vibrati[ae]?\\s*(globala|generala)\\s*\\d+\\s*[-–—:]?|$)`;
