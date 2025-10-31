@@ -253,10 +253,10 @@ function extractVibrationBlock(fullText, n, type = "interioara") {
   }
 
   // 🌍 Vibrația globală / generală → "Vibratia globala 4 - ..." sau "Vibratia generala 4"
-  else if (type.includes("generala") || type.includes("globala")) {
-    // Caută și cu cratimă sau fără, cu spații, etc.
-    pattern = `(^|\\n).*vibrati[ae]?\\s*(globala|generala)\\s*${n}(\\s*[-–—])?[\\s\\S]*?(?=(?:^|\\n).*vibrati[ae]?\\s*(globala|generala)\\s*\\d+\\b|$)`;
-  }
+ else if (type.includes("generala") || type.includes("globala")) {
+  // Ex: "Vibratia globala 3 - ..." sau "Vibratia generala 4 - ..."
+  pattern = `(^|\\n)\\s*vibrati[ae]?\\s*(globala|generala)\\s*${n}\\s*[-–—:]?[\\s\\S]*?(?=(?:^|\\n)\\s*vibrati[ae]?\\s*(globala|generala)\\s*\\d+\\s*[-–—:]?|$)`;
+}
 
   re = new RegExp(pattern, "i");
   match = re.exec(text);
