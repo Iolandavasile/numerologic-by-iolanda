@@ -417,6 +417,7 @@ afirmare (în raport cu sine și în raport cu ceilalți)-care sunt contextele f
  care sunt contextele optime care îl așază pe om pe linia vocației sale (Vibrația destinului) .
  Prin contexte optime înțelegându-se nu numai experiențele pozitive, ci și cele negative, care îi pot servi omului ca lecții de viață, prin care își descoperă varianta mai bună de sine.
 Vibratia Globala ne arata Obiectivul omului in viata 
+
  Vibratia globala 1- preluarea conducerii!
   - Ziua + luna nașterii. Dezvăluie comportamentul general și motivațiile omului, așa cum este el în integralitatea sa, 
 armonizând vibrația interioară (fără mască) cu cea socială (cu mască).-Oferă suportul necesar depășirii provocărilor și obstacolelor în viață.-Oferă informațiile despre motivațiile omului, despre ce îl stimulează să dea cel mai bun randament, 
