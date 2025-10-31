@@ -23,7 +23,6 @@ function calculate() {
   const [year, month, day] = dob.split("-");
   const d = +day, m = +month, y = +year;
 
-  // Cifrele brute pentru OP-uri (inclusiv zerourile din an, cum e corect în numerologie)
   const digits = `${d}${m}${y}`.split("").map(Number);
 
   // --- OP1–OP4 ---
@@ -33,57 +32,47 @@ function calculate() {
   const op3 = Math.abs(op1 - 2 * Number(String(d)[0] || 0));
   const op4 = sumDigits(op3);
 
-  // --- Cod personal (afisare fara zerouri inutile la zi/lună si CU anul fara zerouri) ---
-  const dStr = String(d);       // zi fără zero în față
-  const mStr = String(m);       // lună fără zero în față
-  let   yStr = String(y).replace(/0/g, ""); // eliminăm TOATE zerourile din an
-  if (yStr === "") yStr = "0";  // caz extrem (ex: 0000)
+  const dStr = String(d);
+  const mStr = String(m);
+  let yStr = String(y).replace(/0/g, "");
+  if (yStr === "") yStr = "0";
 
-  // Pentru calcule (matrice) folosim șirul fără spații:
   const codPersonal = `${dStr}${mStr}${yStr}${op1}${op2}${op3}${op4}`;
-
-  // Pentru afișare cu spații între grupe:
   const codPersonalAfisat = `${dStr} ${mStr} ${yStr} ${op1} ${op2} ${op3} ${op4}`;
 
   let box = document.getElementById("personal-code");
   if (box) box.textContent = `Cod personal: ${codPersonalAfisat}`;
 
- // --- Vibrații ---
-const VI = reduceKeep(sumDigits(d));
-window.lastVI = VI;
+  // --- Vibrații ---
+  const VI = reduceKeep(sumDigits(d));
+  window.lastVI = VI;
 
-const VE = reduceKeep(sumDigits(m));
-window.lastVE = VE;
+  const VE = reduceKeep(sumDigits(m));
+  window.lastVE = VE;
 
-const VC = reduceKeep(sumDigits(Number(String(y).slice(-2))));
-window.lastVC = VC;
+  const VC = reduceKeep(sumDigits(Number(String(y).slice(-2))));
+  window.lastVC = VC;
 
-const VG = reduceKeep(sumDigits(d) + sumDigits(m));
-window.lastVG = VG;
+  const VG = reduceKeep(sumDigits(d) + sumDigits(m));
+  window.lastVG = VG;
 
-const VCD = sum;
-const VD = sumDigits(sum);
+  const VCD = sum;
+  const VD = sumDigits(sum);
 
- // ✅ Afișăm doar vibrațiile, în ordinea dorită
-const codes = [
-  `VI: ${VI}`,
-  `VE: ${VE}`,
-  `VC: ${VC}`,
-  `VG: ${VG}`,
-  `VCD: ${VCD}`,
-  `VD: ${VD}`
-];
+  const codes = [
+    `VI: ${VI}`,
+    `VE: ${VE}`,
+    `VC: ${VC}`,
+    `VG: ${VG}`,
+    `VCD: ${VCD}`,
+    `VD: ${VD}`
+  ];
 
-// Afișare ordonată (poți adăuga stiluri CSS dacă vrei)
-document.getElementById("codes").innerHTML =
-  codes.map(c => `<div class="vibration-box">${c}</div>`).join("");
+  document.getElementById("codes").innerHTML =
+    codes.map(c => `<div class="vibration-box">${c}</div>`).join("");
 
-  // --- MATRICEA de bază: DOAR cifrele din codul personal complet (fără spații) ---
   renderMatrix("matrixDate", codPersonal.split("").map(Number));
-
-  // --- MATRICEA numelui ---
   renderMatrix("matrixName", nameDigits(name));
-
   renderNameNumbers(name);
   renderSections();
 }
@@ -110,22 +99,17 @@ function nameDigits(name) {
 
 // ===== MATRICE =====
 function renderMatrix(id, digits) {
-  // 9 celule pentru cifrele 1-9
   const cells = Array(9).fill("");
-
-  // umplem fiecare poziție cu cifrele corespunzătoare
   digits.forEach(n => {
     if (n >= 1 && n <= 9) cells[n - 1] += n;
   });
 
-  // ordonare verticală 147 / 258 / 369
   const reordered = [
     cells[0] || "", cells[3] || "", cells[6] || "",
     cells[1] || "", cells[4] || "", cells[7] || "",
     cells[2] || "", cells[5] || "", cells[8] || ""
   ];
 
-  // afișăm – celulele goale rămân goale
   const html = reordered.map(v => `<div>${v || ""}</div>`).join("");
   document.getElementById(id).innerHTML = html;
 }
@@ -152,6 +136,7 @@ function renderNameNumbers(name) {
     data.map(d => `<div>${d}</div>`).join("");
 }
 
+// ===== SECTIUNI =====
 function renderSections() {
   const container = document.getElementById("sections");
   container.innerHTML = "";
@@ -167,7 +152,6 @@ function renderSections() {
     body.className = "body";
     body.style.display = "none";
 
-    // === FILTRARE INTELIGENTĂ pentru fiecare tip de vibrație ===
     const keyLower = k.toLowerCase();
     let extracted = "";
     let label = "";
@@ -175,56 +159,28 @@ function renderSections() {
     if (keyLower.includes("interioară") || keyLower.includes("interioara")) {
       label = "Vibrația interioară";
       const vi = window.lastVI || "?";
-      extracted = extractVibrationBlock(SECTIONS[k], vi);
-      body.innerHTML = extracted
-        ? `<h4>${label} (${vi})</h4>${formatTextWithNewlines(extracted)}`
-        : `<h4>${label} (${vi})</h4><p>Nu există interpretare pentru vibrația ${vi}.</p>`;
-    }
-
-    else if (keyLower.includes("exterioară") || keyLower.includes("exterioara")) {
+      extracted = extractVibrationBlock(SECTIONS[k], vi, "interioara");
+    } else if (keyLower.includes("exterioară") || keyLower.includes("exterioara")) {
       label = "Vibrația exterioară";
       const ve = window.lastVE || "?";
       extracted = extractVibrationBlock(SECTIONS[k], ve, "exterioara");
-      body.innerHTML = extracted
-        ? `<h4>${label} (${ve})</h4>${formatTextWithNewlines(extracted)}`
-        : `<h4>${label} (${ve})</h4><p>Nu există interpretare pentru vibrația ${ve}.</p>`;
-    }
-
-    else if (keyLower.includes("cosmică") || keyLower.includes("cosmica")) {
+    } else if (keyLower.includes("cosmică") || keyLower.includes("cosmica")) {
       label = "Vibrația cosmică";
       const vc = window.lastVC || "?";
       extracted = extractVibrationBlock(SECTIONS[k], vc, "cosmica");
-      body.innerHTML = extracted
-        ? `<h4>${label} (${vc})</h4>${formatTextWithNewlines(extracted)}`
-        : `<h4>${label} (${vc})</h4><p>Nu există interpretare pentru vibrația ${vc}.</p>`;
+    } else if (
+      keyLower.includes("generală") || keyLower.includes("generala") ||
+      keyLower.includes("globală") || keyLower.includes("globala")
+    ) {
+      label = keyLower.includes("globala") ? "Vibrația globală" : "Vibrația generală";
+      const vg = window.lastVG || "?";
+      extracted = extractVibrationBlock(SECTIONS[k], vg, "globala");
     }
 
-    // --- Vibrația generală / globală (VG) ---
-else if (
-  keyLower.includes("generală") || keyLower.includes("generala") ||
-  keyLower.includes("globală")  || keyLower.includes("globala")
-) {
-  // Dacă titlul conține "global", afișăm eticheta corectă
-  const isGlobal = keyLower.includes("globala") || keyLower.includes("globală");
-  const label = isGlobal ? "Vibrația globală" : "Vibrația generală";
+    body.innerHTML = extracted
+      ? `<h4>${label}</h4>${formatTextWithNewlines(extracted)}`
+      : `<h4>${label}</h4><p>Nu există interpretare pentru această vibrație.</p>`;
 
-  const vg = window.lastVG || "?";
-  // Folosim tipul "globala" pentru regexul special (funcționează și pentru „generala”)
-  const typeForRegex = "globala";
-
-  const extracted = extractVibrationBlock(SECTIONS[k], vg, typeForRegex);
-
-  body.innerHTML = extracted
-    ? `<h4>${label} (${vg})</h4>${formatTextWithNewlines(extracted)}`
-    : `<h4>${label} (${vg})</h4><p>Nu există interpretare pentru vibrația ${vg}.</p>`;
-}
-
-    else {
-      // alte secțiuni (rămân complete)
-      body.innerHTML = SECTIONS[k];
-    }
-
-    // ✅ face butonul clicabil pentru a afișa / ascunde conținutul
     btn.onclick = () => {
       body.style.display = body.style.display === "none" ? "block" : "none";
     };
@@ -234,10 +190,11 @@ else if (
     container.appendChild(div);
   });
 }
+
+// ===== EXTRAGERE TEXT =====
 function extractVibrationBlock(fullText, n, type = "interioara") {
   if (!fullText) return "";
 
-  // Normalizare (diacritice → fara, lowercase, linii Unix)
   const text = fullText
     .toString()
     .replace(/\r\n/g, "\n")
@@ -247,62 +204,31 @@ function extractVibrationBlock(fullText, n, type = "interioara") {
 
   let pattern = "";
 
-  // VI: caută "Plusuri 2" până la următorul "Plusuri X"
   if (type.includes("interioara")) {
-    pattern = `(^|\\n)\\s*plusuri\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)\\s*plusuri\\s*\\d+\\b|$)`;
+    pattern = `(^|\\n)\\s*plusuri\\s*${n}\\b[\\s\\S]*?(?=(^|\\n)\\s*plusuri\\s*\\d+\\b|$)`;
+  } else if (type.includes("exterioara")) {
+    pattern = `(^|\\n).*vibrati[ae]?\\s*exterioar[ae]?\\s*${n}\\b[\\s\\S]*?(?=(^|\\n).*vibrati[ae]?\\s*exterioar[ae]?\\s*\\d+\\b|$)`;
+  } else if (type.includes("cosmica")) {
+    pattern = `(^|\\n).*vibrati[ae]?\\s*cosmic[ae]?\\s*${n}\\b[\\s\\S]*?(?=(^|\\n).*vibrati[ae]?\\s*cosmic[ae]?\\s*\\d+\\b|$)`;
+  } else if (type.includes("globala") || type.includes("generala")) {
+    pattern = `(^|\\n).*vibrati[ae]?\\s*(globala|generala)\\s*${n}\\b[\\s\\S]*?(?=(^|\\n).*vibrati[ae]?\\s*(globala|generala)\\s*\\d+\\b|$)`;
   }
-  // VE: "… vibratia exterioara 2 …" până la următoarea "… vibratia exterioara X …"
-  else if (type.includes("exterioara")) {
-    pattern = `(^|\\n)[\\s\\S]*?vibrati[ae]?\\s*exterioar[ae]?\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)[\\s\\S]*?vibrati[ae]?\\s*exterioar[ae]?\\s*\\d+\\b|$)`;
-  }
-  // VC: "vibratie cosmica 6" până la următoarea „vibratie cosmica X”
-else if (type.includes("cosmica")) {
-  pattern = `(^|\\n)\\s*vibrati[ae]?\\s*cosmic[ae]?\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)\\s*vibrati[ae]?\\s*cosmic[ae]?\\s*\\d+\\b|$)`;
-}
- // VG (globală/generala): "vibratia globala 4 - ..." sau "vibratia generala 4 ..."
-else if (type.includes("generala") || type.includes("globala")) {
-  pattern = `(^|\\n)\\s*vibrati[ae]?\\s*(globala|generala)\\s*${n}\\s*[-–—:]?[\\s\\S]*?(?=(?:^|\\n)\\s*vibrati[ae]?\\s*(globala|generala)\\s*\\d+\\s*[-–—:]?|$)`;
-} 
-else {
-  return "";
+
+  const re = new RegExp(pattern, "i");
+  const match = re.exec(text);
+  return match ? match[0].trim() : "";
 }
 
-// Executăm regexul
-const re = new RegExp(pattern, "i");
-const match = re.exec(text);
-
-// Dacă nu s-a găsit blocul
-if (!match) {
-  console.warn(`❌ Nu s-a găsit bloc pentru ${type} ${n}`);
-  return "";
-}
-
-// Dacă s-a găsit, îl returnăm
-return match[0].trim();
-} // ✅ aceasta închide funcția extractVibrationBlock complet
-
-// 🧩 Funcție care formatează frumos textul: titluri bold, linii noi, puncte pe rânduri separate
+// ===== FORMATARE TEXT =====
 function formatTextWithNewlines(text) {
   if (!text) return "";
 
   return text
-    // Normalizează liniile
     .replace(/\r\n/g, "\n")
-    // Pune <br> înainte de fiecare punct (• sau –)
     .replace(/\n\s*[-•]\s*/g, "<br>• ")
-    // Păstrează paragrafele duble
     .replace(/\n{2,}/g, "<br><br>")
-    // Restul liniilor
     .replace(/\n/g, "<br>")
-    // Titluri bold (Plusuri, Minusuri, Lucruri distructive)
-      .replace(/(Plusuri\s*\d*)/gi, "<br><strong>$1</strong>")
-  .replace(/(Minusuri\s*\d*)/gi, "<br><strong>$1</strong>")
-   .replace(/(Lucruri\s*Distructive)/gi, "<br><strong>$1</strong>");
-} // 🔥 aceasta închide funcția formatTextWithNewlines
-} // ✅ aceasta închide fișierul complet
-
-
-
-
-
-
+    .replace(/(Plusuri\s*\d*)/gi, "<br><strong>$1</strong>")
+    .replace(/(Minusuri\s*\d*)/gi, "<br><strong>$1</strong>")
+    .replace(/(Lucruri\s*Distructive)/gi, "<br><strong>$1</strong>");
+}
