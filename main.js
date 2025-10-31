@@ -259,20 +259,27 @@ function extractVibrationBlock(fullText, n, type = "interioara") {
   else if (type.includes("cosmica")) {
     pattern = `(^|\\n)[\\s\\S]*?vibrati[ae]?\\s*cosmic[ae]?\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)[\\s\\S]*?vibrati[ae]?\\s*cosmic[ae]?\\s*\\d+\\b|$)`;
   }
-  // VG (globală/generala): "vibratia globala 4 - …" sau "vibratia generala 4 …"
-  else if (type.includes("generala") || type.includes("globala")) {
-    pattern = `(^|\\n)\\s*vibrati[ae]?\\s*(globala|generala)\\s*${n}\\s*[-–—:]?[\\s\\S]*?(?=(?:^|\\n)\\s*vibrati[ae]?\\s*(globala|generala)\\s*\\d+\\s*[-–—:]?|$)`;
-  } else {
-    return "";
-  }
+ // VG (globală/generala): "vibratia globala 4 - ..." sau "vibratia generala 4 ..."
+else if (type.includes("generala") || type.includes("globala")) {
+  pattern = `(^|\\n)\\s*vibrati[ae]?\\s*(globala|generala)\\s*${n}\\s*[-–—:]?[\\s\\S]*?(?=(?:^|\\n)\\s*vibrati[ae]?\\s*(globala|generala)\\s*\\d+\\s*[-–—:]?|$)`;
+} 
+else {
+  return "";
+}
 
-  const re = new RegExp(pattern, "i");
-  const match = re.exec(text);
+// Executăm regexul
+const re = new RegExp(pattern, "i");
+const match = re.exec(text);
 
-  if (!match) {
-    console.warn(`❌ Nu s-a găsit bloc pentru ${type} ${n}`);
-    return "";
-  }
+// Dacă nu s-a găsit blocul
+if (!match) {
+  console.warn(`❌ Nu s-a găsit bloc pentru ${type} ${n}`);
+  return "";
+}
+
+// Dacă s-a găsit, îl returnăm
+return match[0].trim();
+} // ✅ aceasta închide funcția extractVibrationBlock complet
 
 // 🧩 Funcție care formatează frumos textul: titluri bold, linii noi, puncte pe rânduri separate
 function formatTextWithNewlines(text) {
