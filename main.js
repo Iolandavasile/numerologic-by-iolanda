@@ -199,14 +199,25 @@ function renderSections() {
         : `<h4>${label} (${vc})</h4><p>Nu există interpretare pentru vibrația ${vc}.</p>`;
     }
 
-    else if (keyLower.includes("generală") || keyLower.includes("generala")) {
-      label = "Vibrația generală";
-      const vg = window.lastVG || "?";
-      extracted = extractVibrationBlock(SECTIONS[k], vg, "generala");
-      body.innerHTML = extracted
-        ? `<h4>${label} (${vg})</h4>${formatTextWithNewlines(extracted)}`
-        : `<h4>${label} (${vg})</h4><p>Nu există interpretare pentru vibrația ${vg}.</p>`;
-    }
+    // --- Vibrația generală / globală (VG) ---
+else if (
+  keyLower.includes("generală") || keyLower.includes("generala") ||
+  keyLower.includes("globală")  || keyLower.includes("globala")
+) {
+  // Dacă titlul conține "global", afișăm eticheta corectă
+  const isGlobal = keyLower.includes("globala") || keyLower.includes("globală");
+  const label = isGlobal ? "Vibrația globală" : "Vibrația generală";
+
+  const vg = window.lastVG || "?";
+  // Folosim tipul "globala" pentru regexul special (funcționează și pentru „generala”)
+  const typeForRegex = "globala";
+
+  const extracted = extractVibrationBlock(SECTIONS[k], vg, typeForRegex);
+
+  body.innerHTML = extracted
+    ? `<h4>${label} (${vg})</h4>${formatTextWithNewlines(extracted)}`
+    : `<h4>${label} (${vg})</h4><p>Nu există interpretare pentru vibrația ${vg}.</p>`;
+}
 
     else {
       // alte secțiuni (rămân complete)
@@ -226,7 +237,7 @@ function renderSections() {
 function extractVibrationBlock(fullText, n, type = "interioara") {
   if (!fullText) return "";
 
-  // 🔧 Normalizare text (elimină diacritice, face totul lowercase)
+  // Normalizare (diacritice → fara, lowercase, linii Unix)
   const text = fullText
     .toString()
     .replace(/\r\n/g, "\n")
@@ -235,43 +246,33 @@ function extractVibrationBlock(fullText, n, type = "interioara") {
     .toLowerCase();
 
   let pattern = "";
-  let re, match;
 
-  // 🌀 Vibrația interioară → căutăm "Plusuri 2"
+  // VI: caută "Plusuri 2" până la următorul "Plusuri X"
   if (type.includes("interioara")) {
     pattern = `(^|\\n)\\s*plusuri\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)\\s*plusuri\\s*\\d+\\b|$)`;
   }
-
-  // 🌙 Vibrația exterioară → "Luna 2 / 11 – Vibratia Exterioara 2"
+  // VE: "… vibratia exterioara 2 …" până la următoarea "… vibratia exterioara X …"
   else if (type.includes("exterioara")) {
-    pattern = `(^|\\n).*vibrati[ae]?\\s*exterioar[ae]?\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n).*vibrati[ae]?\\s*exterioar[ae]?\\s*\\d+\\b|$)`;
+    pattern = `(^|\\n)[\\s\\S]*?vibrati[ae]?\\s*exterioar[ae]?\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)[\\s\\S]*?vibrati[ae]?\\s*exterioar[ae]?\\s*\\d+\\b|$)`;
   }
-
-  // ☀️ Vibrația cosmică → "Vibratie cosmica 6"
+  // VC: "vibratie cosmica 6" până la următoarea „vibratie cosmica X”
   else if (type.includes("cosmica")) {
-    pattern = `(^|\\n).*vibrati[ae]?\\s*cosmic[ae]?\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n).*vibrati[ae]?\\s*cosmic[ae]?\\s*\\d+\\b|$)`;
+    pattern = `(^|\\n)[\\s\\S]*?vibrati[ae]?\\s*cosmic[ae]?\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)[\\s\\S]*?vibrati[ae]?\\s*cosmic[ae]?\\s*\\d+\\b|$)`;
   }
-
-  // 🌍 Vibrația globală / generală → "Vibratia globala 4 - ..." sau "Vibratia generala 4"
-else if (type.includes("generala") || type.includes("globala")) {
-  // Ex: "Vibratia globala 1- ..." sau "Vibratia globala 2 - ..."
-  pattern = `(^|\\n)\\s*vibrati[ae]?\\s*(globala|generala)\\s*${n}\\s*[-–—:]?\\s*[\\s\\S]*?(?=(?:^|\\n)\\s*vibrati[ae]?\\s*(globala|generala)\\s*\\d+\\s*[-–—:]?\\s|$)`;
-
-  const re = new RegExp(pattern, "i");
-  const match = re.exec(fullText);
-
-  if (!match) {
-    console.warn(`❌ [DEBUG] Nu s-a găsit bloc pentru vibrația ${type} ${n}`);
-    console.warn("Text analizat (primele 500 caractere):\n", fullText.slice(0, 500));
+  // VG (globală/generala): "vibratia globala 4 - …" sau "vibratia generala 4 …"
+  else if (type.includes("generala") || type.includes("globala")) {
+    pattern = `(^|\\n)\\s*vibrati[ae]?\\s*(globala|generala)\\s*${n}\\s*[-–—:]?[\\s\\S]*?(?=(?:^|\\n)\\s*vibrati[ae]?\\s*(globala|generala)\\s*\\d+\\s*[-–—:]?|$)`;
+  } else {
     return "";
   }
 
-  console.log(`✅ [DEBUG] Bloc găsit pentru vibrația ${type} ${n}:`);
-  console.log(match[0].slice(0, 300)); // afișează primele 300 caractere din ce s-a prins
+  const re = new RegExp(pattern, "i");
+  const match = re.exec(text);
 
-  return match[0].trim();
-} // ← închide else if
-} // ← închide funcția extractVibrationBlock
+  if (!match) {
+    console.warn(`❌ Nu s-a găsit bloc pentru ${type} ${n}`);
+    return "";
+  }
 
 // 🧩 Funcție care formatează frumos textul: titluri bold, linii noi, puncte pe rânduri separate
 function formatTextWithNewlines(text) {
