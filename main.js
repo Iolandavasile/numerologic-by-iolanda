@@ -226,7 +226,7 @@ function renderSections() {
 function extractVibrationBlock(fullText, n, type = "interioara") {
   if (!fullText) return "";
 
-  // normalizare text pentru potrivire robustă
+  // 🔧 Normalizare text (elimină diacritice, face totul lowercase)
   const text = fullText
     .toString()
     .replace(/\r\n/g, "\n")
@@ -235,31 +235,41 @@ function extractVibrationBlock(fullText, n, type = "interioara") {
     .toLowerCase();
 
   let pattern = "";
+  let re, match;
 
+  // 🌀 Vibrația interioară → căutăm "Plusuri 2"
   if (type.includes("interioara")) {
-    // Plusuri / Minusuri
     pattern = `(^|\\n)\\s*plusuri\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n)\\s*plusuri\\s*\\d+\\b|$)`;
-  } 
-  else if (type.includes("exterioara")) {
-    // Ex: "2. Luna 2 / 11 – Vibratia Exterioara 2"
-    pattern = `(^|\\n).*vibrati[ae]?\\s*exterioar[ae]?\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n).*vibrati[ae]?\\s*exterioar[ae]?\\s*\\d+\\b|$)`;
-  } 
-  else if (type.includes("cosmica")) {
-    // Ex: "Vibratie cosmica 6"
-    pattern = `(^|\\n).*vibrati[ae]?\\s*cosmic[ae]?\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n).*vibrati[ae]?\\s*cosmic[ae]?\\s*\\d+\\b|$)`;
-  } 
-  else if (type.includes("generala") || type.includes("globala")) {
-    // Ex: "Vibratie globala 4" sau "Vibratie generala 4"
-    pattern = `(^|\\n).*vibrati[ae]?\\s*(globala|generala)\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n).*vibrati[ae]?\\s*(globala|generala)\\s*\\d+\\b|$)`;
   }
 
-  const re = new RegExp(pattern, "i");
-  const match = re.exec(text);
+  // 🌙 Vibrația exterioară → "Luna 2 / 11 – Vibratia Exterioara 2"
+  else if (type.includes("exterioara")) {
+    pattern = `(^|\\n).*vibrati[ae]?\\s*exterioar[ae]?\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n).*vibrati[ae]?\\s*exterioar[ae]?\\s*\\d+\\b|$)`;
+  }
 
+  // ☀️ Vibrația cosmică → "Vibratie cosmica 6"
+  else if (type.includes("cosmica")) {
+    pattern = `(^|\\n).*vibrati[ae]?\\s*cosmic[ae]?\\s*${n}\\b[\\s\\S]*?(?=(?:^|\\n).*vibrati[ae]?\\s*cosmic[ae]?\\s*\\d+\\b|$)`;
+  }
+
+  // 🌍 Vibrația globală / generală → "Vibratia globala 4 - ..." sau "Vibratia generala 4"
+  else if (type.includes("generala") || type.includes("globala")) {
+    // Caută și cu cratimă sau fără, cu spații, etc.
+    pattern = `(^|\\n).*vibrati[ae]?\\s*(globala|generala)\\s*${n}(\\s*[-–—])?[\\s\\S]*?(?=(?:^|\\n).*vibrati[ae]?\\s*(globala|generala)\\s*\\d+\\b|$)`;
+  }
+
+  re = new RegExp(pattern, "i");
+  match = re.exec(text);
+
+  // dacă nu găsește, loghează în consolă
   if (!match) {
     console.warn(`❌ Nu s-a găsit bloc pentru ${type} ${n}`);
     return "";
   }
+
+  console.log(`✅ Găsit bloc ${type} ${n}:`, match[0].slice(0, 120));
+  return match[0].trim();
+}
 
   console.log(`✅ Găsit bloc ${type} ${n}:`, match[0].slice(0, 100));
   return match[0].trim();
