@@ -254,22 +254,24 @@ function extractVibrationBlock(fullText, n, type = "interioara") {
 
   // 🌍 Vibrația globală / generală → "Vibratia globala 4 - ..." sau "Vibratia generala 4"
 else if (type.includes("generala") || type.includes("globala")) {
-  // Ex: "Vibratia globala 2 - ..." sau "Vibratia globala 1- ..."
+  // Ex: "Vibratia globala 1- ..." sau "Vibratia globala 2 - ..."
   pattern = `(^|\\n)\\s*vibrati[ae]?\\s*(globala|generala)\\s*${n}\\s*[-–—:]?\\s*[\\s\\S]*?(?=(?:^|\\n)\\s*vibrati[ae]?\\s*(globala|generala)\\s*\\d+\\s*[-–—:]?\\s|$)`;
-}
 
-  re = new RegExp(pattern, "i");
-  match = re.exec(text);
+  const re = new RegExp(pattern, "i");
+  const match = re.exec(fullText);
 
-  // dacă nu găsește, loghează în consolă
   if (!match) {
-    console.warn(`❌ Nu s-a găsit bloc pentru ${type} ${n}`);
+    console.warn(`❌ [DEBUG] Nu s-a găsit bloc pentru vibrația ${type} ${n}`);
+    console.warn("Text analizat (primele 500 caractere):\n", fullText.slice(0, 500));
     return "";
   }
 
-    console.log(`✅ Găsit bloc ${type} ${n}:`, match[0].slice(0, 120));
+  console.log(`✅ [DEBUG] Bloc găsit pentru vibrația ${type} ${n}:`);
+  console.log(match[0].slice(0, 300)); // afișează primele 300 caractere din ce s-a prins
+
   return match[0].trim();
-}  // ✅ aceasta inchide functia extractVibrationBlock
+}
+
 
 // 🧩 Funcție care formatează frumos textul: titluri bold, linii noi, puncte pe rânduri separate
 function formatTextWithNewlines(text) {
