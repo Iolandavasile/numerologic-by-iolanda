@@ -271,10 +271,6 @@ function extractVibrationBlock(fullText, n, type = "interioara") {
   return match[0].trim();
 }
 
-  console.log(`✅ Găsit bloc ${type} ${n}:`, match[0].slice(0, 100));
-  return match[0].trim();
-}
-
 // 🧩 Funcție care formatează frumos textul: titluri bold, linii noi, puncte pe rânduri separate
 function formatTextWithNewlines(text) {
   if (!text) return "";
